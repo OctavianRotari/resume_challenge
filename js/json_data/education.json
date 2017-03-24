@@ -1,0 +1,34 @@
+{
+  "schools": [
+    {
+      "name": "ITC G. Ginanni",
+      "location": "Ravenna",
+      "degreeDates": 3,
+      "url": "bank",
+      "majors": ["Raggioniere"]
+    },
+    {
+      "name": "ITC G. Ginanni",
+      "location": "Ravenna",
+      "degreeDates": 3,
+      "url": "bank",
+      "majors": ["Raggioniere"]
+    }
+  ],
+  "onlineCourses": [
+    {
+      "name": "ITC G. Ginanni",
+      "location": "Ravenna",
+      "degreeDates": 3,
+      "url": "bank",
+      "majors": ["Raggioniere"]
+    },
+    {
+      "name": "ITC G. Ginanni",
+      "location": "Ravenna",
+      "degreeDates": 3,
+      "url": "bank",
+      "majors": ["Raggioniere"]
+    }
+  ]
+}
