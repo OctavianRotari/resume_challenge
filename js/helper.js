@@ -1,4 +1,4 @@
-const HTMLimage = '<img src="%data%" alt="">';
+const HTMLimageSidebar = '<img src="%data%" alt="">';
 
 const HTMLheader = '<div>%data%</div>';
 const HTMLname = '<h1>%data%</h1><hr>';

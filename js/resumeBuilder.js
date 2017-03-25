@@ -1,21 +1,23 @@
-function Bio() {
-}
+const sideBar = {
+  build: {}
+};
 
-function requestData() {
-  return $.ajax({
-    method: 'GET',
-    url: 'js/json_data/bio.json',
-    dataType: 'json'
-  });
-}
-
-Bio.prototype.setData = function () {
-  var _this = this;
-  requestData().done(function (result) {
-    _this.data = result;
+sideBar.getBio = function (buildBio) {
+  $.get( 'js/json_data/bio.json'
+  ).done(function (data) {
+    buildBio(data);
   });
 };
 
-Bio.prototype.displayImage = function() {
-  var image = this.pictureUrl;
+function buildBio(data) {
+  sideBar.bio = data;
 }
+
+sideBar.buil.addImage = function  () {
+  var imageUrl = sideBar.data.pictureUrl;
+  var image = HTMLimageSidebar.replace('%data%', imageUrl)
+  $('#sidebar').append(image);
+};
+
+sideBar.getBio(buildBio);
+sidebar.build.addImage()
