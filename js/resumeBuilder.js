@@ -1,23 +1,33 @@
 const sideBar = {
+  divSidebar: $('#sidebar'),
+  divHeader: $('#sidebar-header'),
   build: {}
 };
 
-sideBar.getBio = function (buildBio) {
-  $.get( 'js/json_data/bio.json'
-  ).done(function (data) {
-    buildBio(data);
-  });
+sideBar.getBio = function () {
+  return $.get( 'js/json_data/bio.json')
 };
 
-function buildBio(data) {
-  sideBar.bio = data;
-}
-
-sideBar.buil.addImage = function  () {
+sideBar.build.addImage = function  () {
   var imageUrl = sideBar.data.pictureUrl;
-  var image = HTMLimageSidebar.replace('%data%', imageUrl)
-  $('#sidebar').append(image);
+  var image = HTMLimageSidebar.replace('%data%', imageUrl);
+  sideBar.divSidebar.prepend(image);
 };
 
-sideBar.getBio(buildBio);
-sidebar.build.addImage()
+sideBar.build.addHeaderInfo = function () {
+  var bioName = sideBar.data.name;
+  var bioRole = sideBar.data.role;
+  var bioWelcomeMessage = sideBar.data.welcomeMessage;
+
+  var name = HTMLname.replace('%data%', bioName);
+  var role  = HTMLrole.replace('%data%', bioRole);
+  var welcomeMessage = HTMLwelcomeMessage.replace('%data%', bioWelcomeMessage);
+
+  sideBar.divHeader.append(name, role, welcomeMessage);
+};
+
+$.when(sideBar.getBio()).done(function (data) {
+  sideBar.data = data;
+  sideBar.build.addImage()
+  sideBar.build.addHeaderInfo();
+});
