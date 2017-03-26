@@ -26,8 +26,16 @@ sideBar.build.addHeaderInfo = function () {
   sideBar.divHeader.append(name, role, welcomeMessage);
 };
 
+sideBar.build.addContacts = function () {
+
+}
+
 $.when(sideBar.getBio()).done(function (data) {
   sideBar.data = data;
   sideBar.build.addImage()
   sideBar.build.addHeaderInfo();
 });
+
+const main = {
+  divMain: $('#main')
+}
