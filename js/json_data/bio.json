@@ -2,11 +2,11 @@
   "name": "Octavian Rotari",
   "role": "Front-end Developer",
   "contacts": {
-    "mobile": "+393451763103",
-    "email": "octavianrotari@gmail.com",
+    "phone": "+393451763103",
+    "mail": "octavianrotari@gmail.com",
     "github": "OctavianRotari",
     "twitter": "@octavianrotari1",
-    "location": "Edinburgh"
+    "position": "Edinburgh"
   },
   "pictureUrl": "img/Potato.png",
   "welcomeMessage": "I'm a Front-end Developer and I like it",

@@ -1,6 +1,8 @@
+// sidebar
 const sideBar = {
   divSidebar: $('#sidebar'),
   divHeader: $('#sidebar-header'),
+  divContacts: $('#contacts'),
   build: {}
 };
 
@@ -27,15 +29,72 @@ sideBar.build.addHeaderInfo = function () {
 };
 
 sideBar.build.addContacts = function () {
+  var contacts = sideBar.data.contacts;
+  for ( var contact in contacts ) {
+    var contactText = contacts[contact];
 
-}
+    var icon = HTMLiconContacts.replace('%data%', `img/${contact}.svg`);
+    var text = HTMLcontactInfo.replace('%data%', contactText).replace('%contactType%', contact);
+
+    sideBar.divContacts.append(HTMLcontact)
+    var contact = $('.contact').last();
+
+    contact.append(icon, text);
+  }
+};
 
 $.when(sideBar.getBio()).done(function (data) {
   sideBar.data = data;
   sideBar.build.addImage()
   sideBar.build.addHeaderInfo();
+  sideBar.build.addContacts();
 });
 
+// main
 const main = {
-  divMain: $('#main')
+  main: $('#main'),
+  header: $('#header'),
+  iconsResume: $('#icons-resume'),
+  conten: $('#content'),
+  contentHeader: $('#content-header'),
+  contentInfo: $('#content-info')
+};
+
+// jobs
+
+const jobs = {
+  build: {}
 }
+
+jobs.getWorks = function () {
+  return $.get('js/json_data/work.json');
+}
+
+jobs.build.header = function () {
+  main.header.append(HTMLcontentHeader);
+  var ulHeader = $('#header ul');
+
+  jobs.data.jobs.forEach( function (job, index) {
+    var jobTitle = HTMLcontentMenu.replace('%data%', job.employer).replace('%dataId%', index);
+    ulHeader.append(jobTitle);
+  });
+};
+
+jobs.build.selectedJob = function () {
+};
+
+$.when(jobs.getWorks()).done(function (data) {
+  jobs.data = data;
+  jobs.build.header();
+  jobs.build.selectedJob();
+})
+
+//// content menu
+//const HTMLcontentHeader = '<ul>%data%</ul>';
+//const HTMLcontentMenu = '<li id=""%dataId%>%data%</li>';
+
+//// jobs
+//const HTMLjobEmployer = '<h4 id="employer">%data%</h4>';
+//const HTMLjobLocation = '<h5 id="job-location">%data%</h5>';
+//const HTMLjobDate = '<h5 id="job-dates">%data%</h5>';
+//const HTMLjobDescription = '<p id="job-description">%data%</p>';

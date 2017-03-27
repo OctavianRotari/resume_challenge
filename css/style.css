@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#sidebar {
+  display: inline-block;
+  width: 23%;
+  float: left;
+}
+
+#sidebar img {
+  max-width: 100%;
+}
+
+
+#contacts i img{
+  width: 30px;
+}
+
+#contacts p {
+  display: inline-block;
+}
+
+#main {
+  display: inline-block;
+  width: 77%;
+  margin: auto;
+  text-align: center;
+}
+
+#main li {
+  display: inline-block;
+}
