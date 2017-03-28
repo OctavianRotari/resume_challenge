@@ -20,6 +20,7 @@ const HTMLcontentMenu = '<li class="job" id="%dataId%"><button>%data%</button></
 
 // jobs
 const HTMLjobEmployer = '<h4 id="employer">%data%</h4>';
+const HTMLjobTitle = '<h5 id="job-title">%data%</h5>';
 const HTMLjobLocation = '<h5 id="job-location">%data%</h5>';
 const HTMLjobDate = '<h5 id="job-dates">%data%</h5>';
 const HTMLjobDescription = '<p id="job-description">%data%</p>';

@@ -64,7 +64,6 @@ const main = {
 
 const jobs = {
   build: {},
-  contentInfo: $('#content-info')
 }
 
 jobs.getWorks = function () {
@@ -75,7 +74,7 @@ jobs.build.header = function () {
   main.header.append(HTMLcontentHeader);
   var ulHeader = $('#header ul');
 
-  jobs.data.jobs.forEach( function (job, index) {
+  jobs.data.jobs.forEach( function (job) {
     var jobTitle = HTMLcontentMenu.replace('%data%', job.employer).replace('%dataId%', job.id);
     ulHeader.append(jobTitle);
   });
@@ -101,16 +100,17 @@ function showJob(id) {
   var job = jobsArray.find(clickedJob, id);
 
   var employer = HTMLjobEmployer.replace('%data%', job.employer);
+  var title = HTMLjobTitle.replace('%data%', job.title);
   var location = HTMLjobLocation.replace('%data%', job.location);
   var dates = HTMLjobDate.replace('%data%', job.dates);
   var description = HTMLjobDescription.replace('%data%', job.description);
 
-  if (jobs.contentInfo.children().length === 0) {
-    jobs.contentInfo.append(employer, location, dates, description);
+  if (main.contentInfo.children().length === 0) {
+    main.contentInfo.append(employer, title, location, dates, description);
   }
   else {
-    jobs.contentInfo.children().remove();
-    jobs.contentInfo.append(employer, location, dates, description);
+    main.contentInfo.children().remove();
+    main.contentInfo.append(employer, title, location, dates, description);
   }
 }
 
