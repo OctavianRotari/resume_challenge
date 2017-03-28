@@ -63,7 +63,8 @@ const main = {
 // jobs
 
 const jobs = {
-  build: {}
+  build: {},
+  contentInfo: $('#content-info')
 }
 
 jobs.getWorks = function () {
@@ -75,26 +76,50 @@ jobs.build.header = function () {
   var ulHeader = $('#header ul');
 
   jobs.data.jobs.forEach( function (job, index) {
-    var jobTitle = HTMLcontentMenu.replace('%data%', job.employer).replace('%dataId%', index);
+    var jobTitle = HTMLcontentMenu.replace('%data%', job.employer).replace('%dataId%', job.id);
     ulHeader.append(jobTitle);
   });
 };
 
 jobs.build.selectedJob = function () {
+  var jobsArray = jobs.data.jobs;
+  for ( var job in jobsArray) {
+    var job = jobsArray[job];
+    var id = job.id;
+    onJobClick (id)
+  }
 };
+
+function onJobClick(id) {
+  $('#' + id).click(function (event) {
+    showJob(this.id)
+  })
+}
+
+function showJob(id) {
+  var jobsArray = jobs.data.jobs;
+  var job = jobsArray.find(clickedJob, id);
+
+  var employer = HTMLjobEmployer.replace('%data%', job.employer);
+  var location = HTMLjobLocation.replace('%data%', job.location);
+  var dates = HTMLjobDate.replace('%data%', job.dates);
+  var description = HTMLjobDescription.replace('%data%', job.description);
+
+  if (jobs.contentInfo.children().length === 0) {
+    jobs.contentInfo.append(employer, location, dates, description);
+  }
+  else {
+    jobs.contentInfo.children().remove();
+    jobs.contentInfo.append(employer, location, dates, description);
+  }
+}
+
+function clickedJob(element) {
+  return element.id.toString() === this[0];
+}
 
 $.when(jobs.getWorks()).done(function (data) {
   jobs.data = data;
   jobs.build.header();
   jobs.build.selectedJob();
 })
-
-//// content menu
-//const HTMLcontentHeader = '<ul>%data%</ul>';
-//const HTMLcontentMenu = '<li id=""%dataId%>%data%</li>';
-
-//// jobs
-//const HTMLjobEmployer = '<h4 id="employer">%data%</h4>';
-//const HTMLjobLocation = '<h5 id="job-location">%data%</h5>';
-//const HTMLjobDate = '<h5 id="job-dates">%data%</h5>';
-//const HTMLjobDescription = '<p id="job-description">%data%</p>';

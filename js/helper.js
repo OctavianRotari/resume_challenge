@@ -16,7 +16,7 @@ const HTMLiconMain = '<i><img src="%data%" alt=""> </i>';
 
 // content menu
 const HTMLcontentHeader = '<ul></ul>';
-const HTMLcontentMenu = '<li id="%dataId%"><button>%data%</button></li>';
+const HTMLcontentMenu = '<li class="job" id="%dataId%"><button>%data%</button></li>';
 
 // jobs
 const HTMLjobEmployer = '<h4 id="employer">%data%</h4>';
