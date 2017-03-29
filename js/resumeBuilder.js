@@ -57,7 +57,8 @@ const main = {
   iconsResume: $('#icons-resume'),
   conten: $('#content'),
   contentHeader: $('#content-header'),
-  contentInfo: $('#content-info')
+  contentInfo: $('#content-info'),
+  work: $('#work')
 };
 
 // jobs
@@ -118,8 +119,11 @@ function clickedJob(element) {
   return element.id.toString() === this[0];
 }
 
-$.when(jobs.getWorks()).done(function (data) {
-  jobs.data = data;
-  jobs.build.header();
-  jobs.build.selectedJob();
+main.work.click(function () {
+  $.when(jobs.getWorks()).done(function (data) {
+    jobs.data = data;
+    jobs.build.header();
+    jobs.build.selectedJob();
+  })
 })
+
