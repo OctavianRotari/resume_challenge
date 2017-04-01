@@ -16,7 +16,7 @@ const HTMLiconMain = '<i><img src="%data%" alt=""> </i>';
 
 // content menu
 const HTMLcontentHeader = '<ul></ul>';
-const HTMLcontentMenu = '<li class="job" id="%dataId%"><button>%data%</button></li>';
+const HTMLcontentMenu = '<li id="%dataId%"><button>%data%</button></li>';
 
 // jobs
 const HTMLjobEmployer = '<h4 id="employer">%data%</h4>';
@@ -26,7 +26,7 @@ const HTMLjobDate = '<h5 id="job-dates">%data%</h5>';
 const HTMLjobDescription = '<p id="job-description">%data%</p>';
 
 // dropdown menu content header
-const HTMLdropdownMenu = '<ul id="dropdown">%data%</ul>';
+const HTMLdropdownMenu = '<ul id="dropdown"></ul>';
 const HTMLdropdownVoice = '<li id="dropdown-li">%data%</li>';
 
 // projects

@@ -58,16 +58,60 @@ const main = {
   conten: $('#content'),
   contentHeader: $('#content-header'),
   contentInfo: $('#content-info'),
-  work: $('#work')
+  work: $('#work'),
+  projects: $('#projects')
 };
+
+main.work.click(function () {
+  closeIfOpen(myProjects)
+  if ( jobs.open === true ) {
+    alert('Already displaying jobs');
+    return;
+  }
+  else {
+    jobs.open = true
+    $.when(jobs.build.getWorks()).done(function (data) {
+      jobs.data = data;
+      jobs.build.header();
+      jobs.build.selectedJob();
+    })
+  }
+})
+
+main.projects.click(function () {
+  closeIfOpen(jobs)
+  if ( myProjects.open === true ) {
+    alert('Already displaying projects');
+    return;
+  }
+  else {
+    myProjects.open = true
+    $.when(myProjects.build.getProjects()).done(function (data) {
+      myProjects.data = data;
+      myProjects.build.header();
+    })
+  }
+});
+
+main.clean = function () {
+  main.header.empty();
+}
+
+function closeIfOpen(section){
+  if ( section.open ) {
+    section.open = false;
+    main.clean();
+  }
+}
 
 // jobs
 
 const jobs = {
   build: {},
+  open: false
 }
 
-jobs.getWorks = function () {
+jobs.build.getWorks = function () {
   return $.get('js/json_data/work.json');
 }
 
@@ -119,11 +163,39 @@ function clickedJob(element) {
   return element.id.toString() === this[0];
 }
 
-main.work.click(function () {
-  $.when(jobs.getWorks()).done(function (data) {
-    jobs.data = data;
-    jobs.build.header();
-    jobs.build.selectedJob();
-  })
-})
+// projects
+const myProjects = {
+  build: {},
+  open: false
+}
 
+myProjects.build.getProjects = function () {
+  return $.get('js/json_data/projects.json');
+}
+
+myProjects.build.header = function () {
+  main.header.append(HTMLdropdownMenu)
+  var ulHeader = $('#header ul');
+  var languages = unique(myProjects.data.projects);
+
+  languages.forEach( function (language) {
+    var projectTitle = HTMLcontentMenu.replace('%data%', language);
+    ulHeader.append(projectTitle);
+  });
+}
+
+function unique(xs) {
+  var languages = [];
+  var seen = {}
+  xs.filter(function (x) {
+    if (languages.includes(x.language)) {
+      return;
+    }
+    languages.push(x.language);
+  });
+  return languages;
+}
+
+//// dropdown menu content header
+//const HTMLdropdownMenu = '<ul id="dropdown">%data%</ul>';
+//const HTMLdropdownVoice = '<li id="dropdown-li">%data%</li>';
