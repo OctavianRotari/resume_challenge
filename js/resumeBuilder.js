@@ -84,65 +84,74 @@ $.when(sideBar.getBio()).done(function (data) {
 });
 
 main.work.click(function () {
-  closeIfOpen(myProjects);
-  closeIfOpen(myEducation);
   if ( myJobs.open === true ) {
     alert('Already displaying jobs');
     return;
   }
   else {
-    myJobs.open = true;
-    $.when(myJobs.build.getWorks()).done(function (data) {
-      myJobs.data = data;
-      myJobs.build.header();
-      myJobs.build.dropDownMenu();
+    $('#menu').slideUp();
+    $('#menu').promise().done( function () {
+      closeIfOpen(myProjects);
+      closeIfOpen(myEducation);
+      myJobs.open = true;
+      $.when(myJobs.build.getWorks()).done(function (data) {
+        myJobs.data = data;
+        myJobs.build.header();
+        myJobs.build.dropDownMenu();
+      });
     });
   }
 });
 
 main.projects.click(function () {
-  closeIfOpen(myJobs);
-  closeIfOpen(myEducation);
   if ( myProjects.open === true ) {
     alert('Already displaying projects');
     return;
   }
   else {
-    myProjects.open = true;
-    $.when(myProjects.build.getProjects()).done(function (data) {
-      myProjects.data = data;
-      myProjects.build.header();
-      myProjects.build.dropDownMenu();
+    $('#menu').slideUp();
+    $('#menu').promise().done( function () {
+      closeIfOpen(myJobs);
+      closeIfOpen(myEducation);
+      myProjects.open = true;
+      $.when(myProjects.build.getProjects()).done(function (data) {
+        myProjects.data = data;
+        myProjects.build.header();
+        myProjects.build.dropDownMenu();
+      });
     });
   }
 });
 
 main.education.click( function () {
-  closeIfOpen(myProjects);
-  closeIfOpen(myJobs);
   if (myEducation.open === true ) {
-    aler('Already displaying education');
+    alert('Already displaying education');
     return;
   }
   else {
-    myEducation.open = true;
-    $.when(myEducation.build.getCourses()).done(function (data) {
-      myEducation.data = data;
-      myEducation.build.header();
-      myEducation.build.dropDownMenu();
+    $('#menu').slideUp();
+    $('#menu').promise().done( function () {
+      closeIfOpen(myProjects);
+      closeIfOpen(myJobs);
+      myEducation.open = true;
+      $.when(myEducation.build.getCourses()).done(function (data) {
+        myEducation.data = data;
+        myEducation.build.header();
+        myEducation.build.dropDownMenu();
+      });
     });
   }
 });
 
-main.clean = function () {
+function cleanMain() {
   main.header.empty();
   main.contentInfo.empty();
-};
+}
 
 function closeIfOpen(section) {
   if ( section.open ) {
     section.open = false;
-    main.clean();
+    cleanMain();
   }
 }
 
@@ -193,7 +202,7 @@ myProjects.build.header = function () {
 };
 
 myProjects.build.dropDownMenu = function () {
-  buildDropDownMenu(myProjects.data.projects, 'title', HTMLcontentMenu, showProject, 'language');
+  buildDropDownMenu(myProjects.data.projects, 'title', HTMLdropdownLiMenu, showProject, 'language');
 };
 
 // project specific function
@@ -232,7 +241,7 @@ myEducation.build.header = function () {
 };
 
 myEducation.build.dropDownMenu = function () {
-  buildDropDownMenu(myEducation.data.courses, 'name', HTMLcontentMenu, showCourses, 'type');
+  buildDropDownMenu(myEducation.data.courses, 'name', HTMLdropdownLiMenu, showCourses, 'type');
 };
 
 // education specific function
@@ -264,11 +273,14 @@ function showCourses() {
 
 function buildHeader(jsonData, key, html) {
   main.header.append(HTMLcontentHeader);
+  $('#menu').slideDown();
   var ulHeader = $('#header ul');
   var uniqueValues = unique(jsonData, key);
 
   uniqueValues.forEach( function (value) {
-    var title = html.replace('%data%', value).replace('%data-value%', value);
+    var title = html.replace('%data%', value)
+      .replace('%data-value%', value)
+      .replace('%rows%', 12 / uniqueValues.length);
     ulHeader.append(title);
   });
 }

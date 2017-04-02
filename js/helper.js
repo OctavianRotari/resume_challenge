@@ -1,4 +1,4 @@
-const HTMLimageSidebar = '<img src="%data%" alt="">';
+const HTMLimageSidebar = '<img src="%data%" class="main-photo" alt="">';
 
 const HTMLheader = '<div>%data%</div>';
 const HTMLname = '<h1>%data%</h1><hr>';
@@ -9,14 +9,12 @@ const HTMLcontact = '<div class="contact"></div>';
 const HTMLiconContacts = '<i><img src="%data%" alt=""></i>';
 const HTMLcontactInfo = '<p id="%contactType%">%data%</p>';
 
-//const HTMLmainHeder = '<h1>%data%</h1>';
-
 // main icons
 const HTMLiconMain = '<i><img src="%data%" alt=""> </i>';
 
 // content menu
-const HTMLcontentHeader = '<ul id="menu"></ul>';
-const HTMLcontentMenu = '<li data-value="%data-value%"><button>%data%</button></li>';
+const HTMLcontentHeader = '<ul id="menu" class="row"></ul>';
+const HTMLcontentMenu = '<li data-value="%data-value%" class="col-sm-%rows%">%data%</li>';
 
 // jobs
 const HTMLjobEmployer = '<h4 id="employer">%data%</h4>';
@@ -27,6 +25,7 @@ const HTMLjobDescription = '<p id="job-description">%data%</p>';
 
 // dropdown menu content header
 const HTMLdropdownMenu = '<ul id="dropdown"></ul>';
+const HTMLdropdownLiMenu = '<li data-value="%data-value%" class="dropdown-li">%data%</li>';
 
 // projects
 
