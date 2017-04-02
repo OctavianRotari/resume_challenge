@@ -16,7 +16,7 @@ const HTMLiconMain = '<i><img src="%data%" alt=""> </i>';
 
 // content menu
 const HTMLcontentHeader = '<ul id="menu"></ul>';
-const HTMLcontentMenu = '<li id="%dataId%"><button>%data%</button></li>';
+const HTMLcontentMenu = '<li data-value="%data-value%"><button>%data%</button></li>';
 
 // jobs
 const HTMLjobEmployer = '<h4 id="employer">%data%</h4>';
@@ -29,18 +29,18 @@ const HTMLjobDescription = '<p id="job-description">%data%</p>';
 const HTMLdropdownMenu = '<ul id="dropdown"></ul>';
 
 // projects
-const HTMLcontentMenuLanguages = '<li data-language="%data-language%"><button>%data%</button></li>';
 
 const HTMLprojectTitle = '<h4 id="project-title">%data%</h4>';
 const HTMLprojectDate = '<h5 id="project-dates">%data%</h5>';
 const HTMLprojectLanguage = '<h5 id="project-language">%data%</h5>';
 const HTMLprojectFrameworks = '<p id="project-frameworks">%data%</p>';
 const HTMLprojectDescription = '<p id="project-description">%data%</p>';
-const HTMLprojectImage = '<img src="%data%" alt="">'
+const HTMLprojectImage = '<img src="%data%" alt="">';
 
 // education
 const HTMLeducationName = '<h4 id="education-name">%data%</h4>';
 const HTMLeducationLocation = '<h5 id="education-location">%data%</h5>';
+const HTMLeducationType = '<h5 id="education-type">%data%</h5>';
 const HTMLeducationDate = '<h5 id="education-dates">%data%</h5>';
 const HTMLeducationUrl = '<h5 id="education-url"><a href="%data%">%data%</a></h5>';
 const HTMLeducationDescription = '<p id="education-description">%data%</p>';

@@ -1,32 +1,42 @@
 {
-  "schools": [
+  "courses": [
     {
+      "id": 0,
       "name": "ITC G. Ginanni",
       "location": "Ravenna",
       "degreeDates": 3,
+      "grade": 3,
+      "type": "School",
       "url": "bank",
       "majors": ["Raggioniere"]
     },
     {
-      "name": "ITC G. Ginanni",
+      "id": 1,
+      "name": "ITIS Mantova",
       "location": "Ravenna",
       "degreeDates": 3,
-      "url": "bank",
-      "majors": ["Raggioniere"]
-    }
-  ],
-  "onlineCourses": [
-    {
-      "name": "ITC G. Ginanni",
-      "location": "Ravenna",
-      "degreeDates": 3,
+      "grade": 3,
+      "type": "School",
       "url": "bank",
       "majors": ["Raggioniere"]
     },
     {
-      "name": "ITC G. Ginanni",
+      "id": 2,
+      "name": "Design",
       "location": "Ravenna",
       "degreeDates": 3,
+      "grade": 3,
+      "type": "On-line",
+      "url": "bank",
+      "majors": ["Raggioniere"]
+    },
+    {
+      "id": 3,
+      "name": "Makers Academy",
+      "location": "Ravenna",
+      "degreeDates": 3,
+      "grade": 3,
+      "type": "On-line",
       "url": "bank",
       "majors": ["Raggioniere"]
     }

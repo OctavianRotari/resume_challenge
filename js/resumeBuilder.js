@@ -15,7 +15,8 @@ const main = {
   contentHeader: $('#content-header'),
   contentInfo: $('#content-info'),
   work: $('#work'),
-  projects: $('#projects')
+  projects: $('#projects'),
+  education: $('#education')
 };
 
 // projects
@@ -27,6 +28,13 @@ const myProjects = {
 // jobs
 
 const myJobs = {
+  build: {},
+  open: false
+};
+
+// education
+
+const myEducation = {
   build: {},
   open: false
 };
@@ -77,6 +85,7 @@ $.when(sideBar.getBio()).done(function (data) {
 
 main.work.click(function () {
   closeIfOpen(myProjects);
+  closeIfOpen(myEducation);
   if ( myJobs.open === true ) {
     alert('Already displaying jobs');
     return;
@@ -86,13 +95,14 @@ main.work.click(function () {
     $.when(myJobs.build.getWorks()).done(function (data) {
       myJobs.data = data;
       myJobs.build.header();
-      myJobs.build.selectedJob();
+      myJobs.build.dropDownMenu();
     });
   }
 });
 
 main.projects.click(function () {
   closeIfOpen(myJobs);
+  closeIfOpen(myEducation);
   if ( myProjects.open === true ) {
     alert('Already displaying projects');
     return;
@@ -107,8 +117,26 @@ main.projects.click(function () {
   }
 });
 
+main.education.click( function () {
+  closeIfOpen(myProjects);
+  closeIfOpen(myJobs);
+  if (myEducation.open === true ) {
+    aler('Already displaying education');
+    return;
+  }
+  else {
+    myEducation.open = true;
+    $.when(myEducation.build.getCourses()).done(function (data) {
+      myEducation.data = data;
+      myEducation.build.header();
+      myEducation.build.dropDownMenu();
+    });
+  }
+});
+
 main.clean = function () {
   main.header.empty();
+  main.contentInfo.empty();
 };
 
 function closeIfOpen(section) {
@@ -123,91 +151,60 @@ myJobs.build.getWorks = function () {
 };
 
 myJobs.build.header = function () {
-  main.header.append(HTMLcontentHeader);
-  var ulHeader = $('#header ul');
-
-  myJobs.data.jobs.forEach( function (job) {
-    var jobTitle = HTMLcontentMenu.replace('%data%', job.employer).replace('%dataId%', job.id);
-    ulHeader.append(jobTitle);
-  });
+  buildHeader(myJobs.data.jobs, 'title', HTMLcontentMenu);
 };
 
-myJobs.build.selectedJob = function () {
-  var jobsArray = myJobs.data.jobs;
-  for ( var job in jobsArray) {
-    var job = jobsArray[job];
-    var id = job.id;
-    onJobClick (id);
-  }
+myJobs.build.dropDownMenu = function () {
+  buildDropDownMenu(myJobs.data.jobs, 'employer', HTMLcontentMenu, showJob, 'title');
 };
 
-function onJobClick(id) {
-  $('#' + id).click(function (event) {
-    showJob(this.id);
+// job specific function
+function showJob() {
+  var jobNames = $('#dropdown li');
+  jobNames.each( function () {
+    $(this).click( function () {
+      var jobs = myJobs.data.jobs;
+      var dataValue = $(this).data().value;
+      var job = jobs.find(clicked, dataValue);
+
+      var employer = HTMLjobEmployer.replace('%data%', job.employer);
+      var title = HTMLjobTitle.replace('%data%', job.title);
+      var location = HTMLjobLocation.replace('%data%', job.location);
+      var dates = HTMLjobDate.replace('%data%', job.dates);
+      var description = HTMLjobDescription.replace('%data%', job.description);
+
+      if (main.contentInfo.children().length !== 0) {
+        main.contentInfo.children().remove();
+      }
+
+      main.contentInfo.append(employer, title, location, dates, description);
+    });
   });
-}
-
-function showJob(id) {
-  var jobsArray = myJobs.data.jobs;
-  var job = jobsArray.find(clicked, id);
-
-  var employer = HTMLjobEmployer.replace('%data%', job.employer);
-  var title = HTMLjobTitle.replace('%data%', job.title);
-  var location = HTMLjobLocation.replace('%data%', job.location);
-  var dates = HTMLjobDate.replace('%data%', job.dates);
-  var description = HTMLjobDescription.replace('%data%', job.description);
-
-  if (main.contentInfo.children().length !== 0) {
-    main.contentInfo.children().remove();
-  }
-
-  main.contentInfo.append(employer, title, location, dates, description);
-}
-
-function clicked(element) {
-  return element.id.toString() === this[0];
 }
 
 // projects
+
 myProjects.build.getProjects = function () {
   return $.get('js/json_data/projects.json');
 };
 
 myProjects.build.header = function () {
-  main.header.append(HTMLcontentHeader);
-  var ulHeader = $('#header ul');
-  var languages = unique(myProjects.data.projects);
-
-  languages.forEach( function (language) {
-    var projectTitle = HTMLcontentMenuLanguages.replace('%data-language%', language).replace('%data%', language);
-    ulHeader.append(projectTitle);
-  });
+  buildHeader(myProjects.data.projects, 'language', HTMLcontentMenu);
 };
 
 myProjects.build.dropDownMenu = function () {
-  var li = $('#menu li');
-  li.mouseenter(function () {
-    $(this).append(HTMLdropdownMenu);
-    var dataLanguage = $(this).data();
-    var projects = findProjectsBy(dataLanguage.language);
-    projects.forEach( function (project) {
-      var projectTitle = project.title;
-      var title = HTMLcontentMenu.replace('%data%', projectTitle).replace('%dataId%', project.id);
-      $('#dropdown').append(title);
-      showProject();
-    });
-  }).mouseleave(function () {
-    $('#dropdown li').remove();
-    $('#dropdown').remove();
-  });
+  buildDropDownMenu(myProjects.data.projects, 'title', HTMLcontentMenu, showProject, 'language');
 };
+
+// project specific function
 
 function showProject() {
   var projectsNames = $('#dropdown li');
   projectsNames.each( function () {
     $(this).click( function () {
       var projects = myProjects.data.projects;
-      var project = projects.find(clicked, this.id);
+      var dataValue = $(this).data().value;
+      var project = projects.find(clicked, dataValue);
 
       var title = HTMLprojectTitle.replace('%data%', project.title);
       var date = HTMLprojectDate.replace('%data%', project.date);
@@ -221,24 +218,98 @@ function showProject() {
       }
       main.contentInfo.append(title, date, language, frameworks, description, image);
     });
-  })
-};
-
-function findProjectsBy(language) {
-  var projects = myProjects.data.projects;
-  return projects.filter( function (project) {
-    return project.language === language;
   });
 }
 
-function unique(xs) {
-  var languages = [];
+// education
+
+myEducation.build.getCourses = function () {
+  return $.get('js/json_data/education.json');
+};
+
+myEducation.build.header = function () {
+  buildHeader(myEducation.data.courses, 'type', HTMLcontentMenu);
+};
+
+myEducation.build.dropDownMenu = function () {
+  buildDropDownMenu(myEducation.data.courses, 'name', HTMLcontentMenu, showCourses, 'type');
+};
+
+// education specific function
+
+function showCourses() {
+  var coursesNames = $('#dropdown li');
+  coursesNames.each( function () {
+    $(this).click( function () {
+      var courses = myEducation.data.courses;
+      var dataValue = $(this).data().value;
+      var course = courses.find(clicked, dataValue);
+
+      var name = HTMLeducationName.replace('%data%', course.name);
+      var location = HTMLeducationLocation.replace('%data%', course.location);
+      var date = HTMLeducationDate.replace('%data%', course.degreeDates);
+      var url = HTMLeducationUrl.replace('%data%', course.url).replace('%data%', course.name);
+      var description = HTMLeducationDescription.replace('%data%', course.description);
+      var grade = HTMLeducationGrade.replace('%data%', course.grade);
+
+      if (main.contentInfo.children().length !== 0) {
+        main.contentInfo.children().remove();
+      }
+      main.contentInfo.append(name, location, date, url, description, grade);
+    });
+  });
+}
+
+// common functions
+
+function buildHeader(jsonData, key, html) {
+  main.header.append(HTMLcontentHeader);
+  var ulHeader = $('#header ul');
+  var uniqueValues = unique(jsonData, key);
+
+  uniqueValues.forEach( function (value) {
+    var title = html.replace('%data%', value).replace('%data-value%', value);
+    ulHeader.append(title);
+  });
+}
+
+function buildDropDownMenu(objects, key, html, callback, uniqueValue) {
+  var li = $('#menu li');
+  li.mouseenter(function () {
+    $(this).append(HTMLdropdownMenu);
+    var dataValue = $(this).data().value;
+    var specificObjects = findBy(objects, uniqueValue, dataValue);
+
+    specificObjects.forEach( function (specificObject) {
+      var menuItem = specificObject[key];
+      var item = html.replace('%data%', menuItem).replace('%data-value%', specificObject.id);
+      $('#dropdown').append(item);
+      callback();
+    });
+  }).mouseleave(function () {
+    $('#dropdown li').remove();
+    $('#dropdown').remove();
+  });
+}
+
+function findBy(objects, key, value) {
+  return objects.filter( function (object) {
+    return object[key] === value;
+  });
+}
+
+function unique(xs, key) {
+  var uniqueObj = [];
   var seen = {};
   xs.filter(function (x) {
-    if (languages.includes(x.language)) {
+    if (uniqueObj.includes(x[key])) {
       return;
     }
-    languages.push(x.language);
+    uniqueObj.push(x[key]);
   });
-  return languages;
+  return uniqueObj;
+}
+
+function clicked(element) {
+  return element.id === this.valueOf();
 }
