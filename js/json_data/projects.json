@@ -2,7 +2,7 @@
   "projects": [
     {
       "id": 0,
-      "title": "Hello world",
+      "title": "Hello javascript",
       "dates": "07/2012-10/2012",
       "description": "Main barteder in one of the most famous restaurant in Maiorca",
       "language": "javascript",
@@ -11,7 +11,7 @@
     },
     {
       "id": 1,
-      "title": "Hello world",
+      "title": "Hello ruby",
       "dates": "07/2012-10/2012",
       "description": "Main barteder in one of the most famous restaurant in Maiorca",
       "language": "ruby",
@@ -20,7 +20,7 @@
     },
     {
       "id": 2,
-      "title": "Hello world",
+      "title": "Hello html-css",
       "dates": "07/2012-10/2012",
       "description": "Main barteder in one of the most famous restaurant in Maiorca",
       "language": "HTML-CSS",

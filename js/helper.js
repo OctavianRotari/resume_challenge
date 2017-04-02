@@ -15,7 +15,7 @@ const HTMLcontactInfo = '<p id="%contactType%">%data%</p>';
 const HTMLiconMain = '<i><img src="%data%" alt=""> </i>';
 
 // content menu
-const HTMLcontentHeader = '<ul></ul>';
+const HTMLcontentHeader = '<ul id="menu"></ul>';
 const HTMLcontentMenu = '<li id="%dataId%"><button>%data%</button></li>';
 
 // jobs
@@ -27,9 +27,10 @@ const HTMLjobDescription = '<p id="job-description">%data%</p>';
 
 // dropdown menu content header
 const HTMLdropdownMenu = '<ul id="dropdown"></ul>';
-const HTMLdropdownVoice = '<li id="dropdown-li">%data%</li>';
 
 // projects
+const HTMLcontentMenuLanguages = '<li data-language="%data-language%"><button>%data%</button></li>';
+
 const HTMLprojectTitle = '<h4 id="project-title">%data%</h4>';
 const HTMLprojectDate = '<h5 id="project-dates">%data%</h5>';
 const HTMLprojectLanguage = '<h5 id="project-language">%data%</h5>';
