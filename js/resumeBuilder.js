@@ -70,9 +70,9 @@ sideBar.build.addContacts = function () {
     var text = HTMLcontactInfo.replace('%data%', contactText).replace('%contactType%', contact);
 
     sideBar.divContacts.append(HTMLcontact);
-    var contact = $('.contact').last();
+    var lastContact = $('.contact').last();
 
-    contact.append(icon, text);
+    lastContact.append(icon, text);
   }
 };
 
@@ -84,78 +84,57 @@ $.when(sideBar.getBio()).done(function (data) {
 });
 
 main.work.click(function () {
-  if ( myJobs.open === true ) {
-    alert('Already displaying jobs');
-    return;
-  }
-  else {
-    $('#menu').slideUp();
-    $('#menu').promise().done( function () {
-      closeIfOpen(myProjects);
-      closeIfOpen(myEducation);
-      myJobs.open = true;
-      $.when(myJobs.build.getWorks()).done(function (data) {
-        myJobs.data = data;
-        myJobs.build.header();
-        myJobs.build.dropDownMenu();
-      });
-    });
-  }
+  onIconClick(myJobs);
 });
 
 main.projects.click(function () {
-  if ( myProjects.open === true ) {
-    alert('Already displaying projects');
-    return;
-  }
-  else {
-    $('#menu').slideUp();
-    $('#menu').promise().done( function () {
-      closeIfOpen(myJobs);
-      closeIfOpen(myEducation);
-      myProjects.open = true;
-      $.when(myProjects.build.getProjects()).done(function (data) {
-        myProjects.data = data;
-        myProjects.build.header();
-        myProjects.build.dropDownMenu();
-      });
-    });
-  }
+  onIconClick(myProjects);
 });
 
 main.education.click( function () {
-  if (myEducation.open === true ) {
-    alert('Already displaying education');
+  onIconClick(myEducation);
+});
+
+function onIconClick(iconCategory) {
+  if (iconCategory.open === true ) {
+    alert('Already displaying.');
     return;
   }
   else {
     $('#menu').slideUp();
     $('#menu').promise().done( function () {
-      closeIfOpen(myProjects);
-      closeIfOpen(myJobs);
-      myEducation.open = true;
-      $.when(myEducation.build.getCourses()).done(function (data) {
-        myEducation.data = data;
-        myEducation.build.header();
-        myEducation.build.dropDownMenu();
+      closeIfOpen();
+      iconCategory.open = true;
+      $.when(iconCategory.build.getData()).done(function (data) {
+        iconCategory.data = data;
+        iconCategory.build.header();
+        iconCategory.build.dropDownMenu();
       });
     });
   }
-});
+}
+
+function closeIfOpen() {
+  if ( myEducation.open === true ) {
+    myEducation.open = false;
+    cleanMain();
+  }
+  else if (myProjects.open === true) {
+    myProjects.open = false;
+    cleanMain();
+  }
+  else if (myJobs.open === true) {
+    myJobs.open = false;
+    cleanMain();
+  }
+}
 
 function cleanMain() {
   main.header.empty();
   main.contentInfo.empty();
 }
 
-function closeIfOpen(section) {
-  if ( section.open ) {
-    section.open = false;
-    cleanMain();
-  }
-}
-
-myJobs.build.getWorks = function () {
+myJobs.build.getData = function () {
   return $.get('js/json_data/work.json');
 };
 
@@ -193,7 +172,7 @@ function showJob() {
 
 // projects
 
-myProjects.build.getProjects = function () {
+myProjects.build.getData = function () {
   return $.get('js/json_data/projects.json');
 };
 
@@ -232,7 +211,7 @@ function showProject() {
 
 // education
 
-myEducation.build.getCourses = function () {
+myEducation.build.getData = function () {
   return $.get('js/json_data/education.json');
 };
 
