@@ -1,3 +1,18 @@
+@keyframes fromCircleToRectangle{
+  0% {
+    shape-inside: circle(250px, 250px, 210px);
+    shape-inside: circle(250px, 250px, 210px);
+  }
+  50% {
+    shape-inside: circle(250px, 250px, 250px);
+    shape-inside: circle(250px, 250px, 250px);
+  }
+  0% {
+    shape-inside: circle(250px, 250px, 210px);
+    shape-inside: circle(250px, 250px, 210px);
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,15 +30,14 @@
 #sidebar .main-photo {
   display: block;
   margin: 60px auto 0 auto;
-  max-width: 177px;
-  max-height: 177px;
+  max-width: 61%;
   background-color: #dbe0d8;
   box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
 }
 
 .sidebar-text {
   margin: 60px auto;
-  max-width: 218px;
+  max-width: 75%;
 }
 
 #sidebar-header {
@@ -74,20 +88,32 @@
   text-align: center;
   background-color: #3399cc;
   height: 100vh;
-  box-shadow: -5px 0px 15px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px -5px 20px 0px rgba(0,0,0,0.75);
+}
+
+.main-content {
+  max-width: 100%;
+  min-height: 100%;
+}
+
+#icons-resume.row{
+  max-width: 70%;
+  margin: auto;
 }
 
 #icons-resume img{
-  height: 82px;
+  height: 96px;
 }
 
 #main #menu {
   display: none;
   margin: auto;
-  width: 720px;
+  max-width: 70%;
   margin-top: 30px;
   background-color: #fdffff;
   height: 38px;
+  position: relative;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.75);
 }
 
 #main #menu li {
@@ -98,13 +124,29 @@
   transform: translateY(9px);
 }
 
+#content-info {
+  color: #e7e5ce;
+  max-width: 70%;
+  height: 370px;
+  margin: auto;
+  display: none;
+  background-color: #A64819;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.75);
+}
+
+#content-info h4:first-child{
+  margin-top:0;
+}
+
 #dropdown {
   width: 100%;
   position: absolute;
   left: 0px;
+  background: #fdffff;
+  box-shadow: 0px 10px 15px rgba(0,0,0,0.75);
 }
 
-#dropdown li {
-  width: 100%;
+#dropdown li.dropdown-item {
   text-transform: none !important;
+  margin: 10px auto;
 }
