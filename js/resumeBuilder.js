@@ -23,21 +23,24 @@ const main = {
 // projects
 const myProjects = {
   build: {},
-  open: false
+  open: false,
+  icon: $('#projects')
 };
 
 // jobs
 
 const myJobs = {
   build: {},
-  open: false
+  open: false,
+  icon: $('#work')
 };
 
 // education
 
 const myEducation = {
   build: {},
-  open: false
+  open: false,
+  icon: $('#education')
 };
 
 sideBar.getBio = function () {
@@ -136,7 +139,7 @@ function onIconClick(iconCategory) {
         iconCategory.open = true;
         $.when(iconCategory.build.getData()).done(function (data) {
           iconCategory.data = data;
-          iconCategory.build.header();
+          iconCategory.build.header(iconCategory.icon);
         });
       });
     });
@@ -167,7 +170,7 @@ myJobs.build.getData = function () {
   return $.get('js/json_data/work.json');
 };
 
-myJobs.build.header = function () {
+myJobs.build.header = function (icon) {
 
   var options = {
     data: myJobs.data.jobs,
@@ -175,7 +178,8 @@ myJobs.build.header = function () {
     keyDropdown: 'employer',
     html: HTMLcontentMenu,
     htmlDropdown: HTMLdropdownLiMenu,
-    build: buildProject
+    build: buildProject,
+    icon: icon
   };
 
   buildHeader(options);
@@ -212,7 +216,7 @@ myProjects.build.getData = function () {
   return $.get('js/json_data/projects.json');
 };
 
-myProjects.build.header = function () {
+myProjects.build.header = function (icon) {
 
   var options = {
     data: myProjects.data.projects,
@@ -220,7 +224,8 @@ myProjects.build.header = function () {
     keyDropdown: 'title',
     html: HTMLcontentMenu,
     htmlDropdown: HTMLdropdownLiMenu,
-    build: buildProject
+    build: buildProject,
+    icon: icon
   };
 
   buildHeader(options);
@@ -253,7 +258,7 @@ myEducation.build.getData = function () {
   return $.get('js/json_data/education.json');
 };
 
-myEducation.build.header = function () {
+myEducation.build.header = function (icon) {
 
   var options = {
     data: myEducation.data.courses,
@@ -261,7 +266,8 @@ myEducation.build.header = function () {
     keyDropdown: 'name',
     html: HTMLcontentMenu,
     htmlDropdown: HTMLdropdownLiMenu,
-    build: buildCourses
+    build: buildCourses,
+    icon: icon
   };
 
   buildHeader(options);
@@ -291,9 +297,9 @@ function buildCourses(dataValue) {
 // common functions
 
 function buildHeader(options) {
-  animateMenu().promise().done(function () {
+  animateMenu(options.icon).promise().done(function () {
     setTimeout(function () {
-      $('.animation').hide();
+      $('.animation').remove();
 
       main.header.append(HTMLcontentHeader);
       $('#menu').slideDown();
@@ -316,10 +322,10 @@ function buildHeader(options) {
   });
 }
 
-function animateMenu() {
+function animateMenu(icon) {
   $('body').append(HTMLdivAnimation);
   var animationDot = $('.animation');
-  var position = $('.icon-projects').offset();
+  var position = icon.offset();
   animationDot.css('left', position.left += 35 );
   animationDot.css('top', position.top += 20 );
 
