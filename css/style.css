@@ -20,6 +20,8 @@
 }
 
 #sidebar {
+  position: absolute;
+  z-index: 8;
   display: inline-block;
   width: 23%;
   float: left;
@@ -64,6 +66,10 @@
   margin-bottom: 20px;
 }
 
+#hide-side-bar {
+  position: absolute;
+}
+
 #contacts i img{
   color: #e7e5ce;
   width: 30px;
@@ -81,35 +87,48 @@
   transform: translateY(5px);
 }
 
-#main {
+.slide-left {
+  transition: 1s !important;
+  width: 100% !important;
+  left: 0 !important;
+}
+
+.main {
+  position: absolute;
+  z-index: 9;
+  left: 23%;
+  transition: 1s;
+  background: #fff;
   display: inline-block;
   width: 77%;
   margin: auto;
   text-align: center;
-  background-color: #3399cc;
+  /*background-color: #3399cc;*/
   height: 100vh;
   box-shadow: 0px -5px 20px 0px rgba(0,0,0,0.75);
 }
 
-.main-content {
-  max-width: 100%;
-  min-height: 100%;
+#icons-resume{
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
 }
 
-#icons-resume.row{
-  max-width: 70%;
-  margin: auto;
+#icons-resume div{
+  margin-bottom: 130px;
 }
 
 #icons-resume img{
-  height: 96px;
+  height: 70px;
+}
+
+#icons-resume div:last-child{
+  margin-bottom: 0;
 }
 
 #main #menu {
   display: none;
   margin: auto;
-  max-width: 70%;
-  margin-top: 30px;
   background-color: #fdffff;
   height: 38px;
   position: relative;
@@ -121,16 +140,25 @@
   font-family: Palatino;
   font-size: 18px;
   text-transform: uppercase;
-  transform: translateY(9px);
+  height: 38px;
+  padding: 10px 0;
+}
+
+.main-content {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  min-width: 70%;
+  margin: auto;
 }
 
 #content-info {
   color: #e7e5ce;
-  max-width: 70%;
   height: 370px;
   margin: auto;
   display: none;
-  background-color: #A64819;
+  background-color: #3399cc;
   box-shadow: 0px 5px 15px rgba(0,0,0,0.75);
 }
 
@@ -139,14 +167,15 @@
 }
 
 #dropdown {
-  width: 100%;
+  width: inherit;
   position: absolute;
-  left: 0px;
+  top: 38px;
   background: #fdffff;
   box-shadow: 0px 10px 15px rgba(0,0,0,0.75);
 }
 
 #dropdown li.dropdown-item {
+  display: block !important;
   text-transform: none !important;
   margin: 10px auto;
 }

@@ -13,8 +13,8 @@ const HTMLcontactInfo = '<p id="%contactType%">%data%</p>';
 const HTMLiconMain = '<i><img src="%data%" alt=""> </i>';
 
 // content menu
-const HTMLcontentHeader = '<ul id="menu" class="row"></ul>';
-const HTMLcontentMenu = '<li data-value="%data-value%" class="col-sm-%rows%">%data%</li>';
+const HTMLcontentHeader = '<ul id="menu"></ul>';
+const HTMLcontentMenu = '<li data-value="%data-value%">%data%</li>';
 
 // jobs
 const HTMLjobEmployer = '<h4 id="employer">%data%</h4>';

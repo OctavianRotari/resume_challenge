@@ -4,8 +4,6 @@
 		<meta charset="utf-8">
 		<title>Resume</title>
 		<link href="css/style.css" rel="stylesheet">
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<!--<script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script> -->
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 	</head>
@@ -16,29 +14,31 @@
 				<div id="contacts"></div>
 			</div>
 		</div>
-		<div id="main" class="container">
-			<div class="main-content">
-				<h1>Resume</h1>
-				<div id="icons-resume" class="row">
-					<div class="icon-projects col-sm-4">
-						<img id="projects" src="img/projects.svg" alt="">
-					</div>
-					<div class="icon-work col-sm-4">
-						<img id="work" src="img/administrator.svg" alt="">
-					</div>
-					<div class="icon-education col-sm-4">
-						<img id="education" src="img/school.svg" alt="">
-					</div>
+		<div id="main" class="main">
+			<div id="hide-side-bar"><i>Hide</i></div>
+			<div id="icons-resume">
+				<div class="icon-projects">
+					<img id="projects" src="img/projects.svg" alt="">
 				</div>
+				<div class="icon-work">
+					<img id="work" src="img/administrator.svg" alt="">
+				</div>
+				<div class="icon-education">
+					<img id="education" src="img/school.svg" alt="">
+				</div>
+			</div>
+				<h1>Resume</h1>
+			<div class="main-content">
 				<div id="header">
 				</div>
 				<div id="content">
 					<div id="content-header"></div>
-					<div id="content-info" class="row"></div>
+					<div id="content-info"></div>
 				</div>
 			</div>
 		</div>
 		<script src="js/jQuery.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 		<script src="js/helper.js"></script>
 		<script src="js/resumeBuilder.js"></script>
 	</body>

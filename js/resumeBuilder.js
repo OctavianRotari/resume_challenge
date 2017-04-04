@@ -3,6 +3,7 @@ const sideBar = {
   divSidebar: $('#sidebar'),
   divHeader: $('#sidebar-header'),
   divContacts: $('#contacts'),
+  showBar: true,
   build: {}
 };
 
@@ -76,11 +77,38 @@ sideBar.build.addContacts = function () {
   }
 };
 
+sideBar.build.hideSide = function () {
+  $('#hide-side-bar').click( function () {
+    if ( sideBar.showBar ) {
+      closeSidebar()
+    }
+    else {
+      openSidebar()
+    }
+  });
+};
+
+function closeSidebar() {
+  $('#main').addClass('slide-left');
+  sideBar.showBar = false;
+}
+
+function openSidebar() {
+  $('#main').removeClass('slide-left');
+  sideBar.showBar = true;
+}
+
 $.when(sideBar.getBio()).done(function (data) {
   sideBar.data = data;
   sideBar.build.addImage();
   sideBar.build.addHeaderInfo();
   sideBar.build.addContacts();
+  sideBar.build.hideSide();
+  $(document).ready(function () {
+    setTimeout(function () {
+      closeSidebar();
+    }, 1000);
+  });
 });
 
 main.work.click(function () {
@@ -253,9 +281,12 @@ function buildHeader(jsonData, key, html) {
 
   uniqueValues.forEach( function (value) {
     var title = html.replace('%data%', value)
-      .replace('%data-value%', value)
-      .replace('%rows%', 12 / uniqueValues.length);
+      .replace('%data-value%', value);
     ulHeader.append(title);
+  });
+
+  $('#menu li').each( function () {
+    $(this).css('width', `${ 100 / uniqueValues.length }%`);
   });
 }
 
@@ -270,8 +301,8 @@ function buildDropDownMenu(objects, key, html, callback, uniqueValue) {
       var menuItem = specificObject[key];
       var item = html.replace('%data%', menuItem).replace('%data-value%', specificObject.id);
       $('#dropdown').append(item);
-      $('#dropdown li').addClass('dropdown-item')
-      showContentInfo(callback)
+      $('#dropdown li').addClass('dropdown-item');
+      showContentInfo(callback);
     });
   }).mouseleave(function () {
     $('#dropdown li').remove();
