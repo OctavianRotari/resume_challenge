@@ -1,18 +1,3 @@
-@keyframes fromCircleToRectangle{
-  0% {
-    shape-inside: circle(250px, 250px, 210px);
-    shape-inside: circle(250px, 250px, 210px);
-  }
-  50% {
-    shape-inside: circle(250px, 250px, 250px);
-    shape-inside: circle(250px, 250px, 250px);
-  }
-  0% {
-    shape-inside: circle(250px, 250px, 210px);
-    shape-inside: circle(250px, 250px, 210px);
-  }
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -68,6 +53,13 @@
 
 #hide-side-bar {
   position: absolute;
+  width: 100px;
+}
+
+#hide-side-bar img {
+  margin-bottom: 130px;
+  margin-top: 10px;
+  width: 70px;
 }
 
 #contacts i img{
@@ -112,18 +104,23 @@
   position: absolute;
   transform: translateY(-50%);
   top: 50%;
+  width: 100px;
 }
 
 #icons-resume div{
-  margin-bottom: 130px;
+  margin-bottom: 100px;
 }
 
 #icons-resume img{
   height: 70px;
 }
 
-#icons-resume div:last-child{
+#icons-resume .icon-education{
   margin-bottom: 0;
+}
+
+#header {
+  margin-bottom: 30px;
 }
 
 #main #menu {
@@ -178,4 +175,13 @@
   display: block !important;
   text-transform: none !important;
   margin: 10px auto;
+}
+
+.animation {
+  position: absolute;
+  z-index: 10;
+    height: 38px;
+    width: 38px;
+    background-color: #ffb84d;
+    border-radius: 50%;
 }

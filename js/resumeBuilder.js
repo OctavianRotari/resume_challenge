@@ -140,7 +140,7 @@ function onIconClick(iconCategory) {
           iconCategory.build.dropDownMenu();
         });
       });
-    })
+    });
   }
 }
 
