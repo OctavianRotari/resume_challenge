@@ -142,6 +142,7 @@
 }
 
 .main-content {
+  min-height: 54.75%;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -180,8 +181,7 @@
 .animation {
   position: absolute;
   z-index: 10;
-    height: 38px;
-    width: 38px;
-    background-color: #ffb84d;
-    border-radius: 50%;
+  height: 1px;
+  width: 38px;
+  background-color: #4e2e69;
 }

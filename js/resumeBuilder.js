@@ -137,7 +137,6 @@ function onIconClick(iconCategory) {
         $.when(iconCategory.build.getData()).done(function (data) {
           iconCategory.data = data;
           iconCategory.build.header();
-          iconCategory.build.dropDownMenu();
         });
       });
     });
@@ -169,11 +168,17 @@ myJobs.build.getData = function () {
 };
 
 myJobs.build.header = function () {
-  buildHeader(myJobs.data.jobs, 'title', HTMLcontentMenu);
-};
 
-myJobs.build.dropDownMenu = function () {
-  buildDropDownMenu(myJobs.data.jobs, 'employer', HTMLcontentMenu, buildJob, 'title');
+  var options = {
+    data: myJobs.data.jobs,
+    keyMenu: 'title',
+    keyDropdown: 'employer',
+    html: HTMLcontentMenu,
+    htmlDropdown: HTMLdropdownLiMenu,
+    build: buildProject
+  };
+
+  buildHeader(options);
 };
 
 // job specific function
@@ -208,11 +213,17 @@ myProjects.build.getData = function () {
 };
 
 myProjects.build.header = function () {
-  buildHeader(myProjects.data.projects, 'language', HTMLcontentMenu);
-};
 
-myProjects.build.dropDownMenu = function () {
-  buildDropDownMenu(myProjects.data.projects, 'title', HTMLdropdownLiMenu, buildProject, 'language');
+  var options = {
+    data: myProjects.data.projects,
+    keyMenu: 'language',
+    keyDropdown: 'title',
+    html: HTMLcontentMenu,
+    htmlDropdown: HTMLdropdownLiMenu,
+    build: buildProject
+  };
+
+  buildHeader(options);
 };
 
 // project specific function
@@ -243,11 +254,17 @@ myEducation.build.getData = function () {
 };
 
 myEducation.build.header = function () {
-  buildHeader(myEducation.data.courses, 'type', HTMLcontentMenu);
-};
 
-myEducation.build.dropDownMenu = function () {
-  buildDropDownMenu(myEducation.data.courses, 'name', HTMLdropdownLiMenu, buildCourses, 'type');
+  var options = {
+    data: myEducation.data.courses,
+    keyMenu: 'type',
+    keyDropdown: 'name',
+    html: HTMLcontentMenu,
+    htmlDropdown: HTMLdropdownLiMenu,
+    build: buildCourses
+  };
+
+  buildHeader(options);
 };
 
 // education specific function
@@ -273,36 +290,63 @@ function buildCourses(dataValue) {
 
 // common functions
 
-function buildHeader(jsonData, key, html) {
-  main.header.append(HTMLcontentHeader);
-  $('#menu').slideDown();
-  var ulHeader = $('#header ul');
-  var uniqueValues = unique(jsonData, key);
+function buildHeader(options) {
+  animateMenu().promise().done(function () {
+    setTimeout(function () {
+      $('.animation').hide();
 
-  uniqueValues.forEach( function (value) {
-    var title = html.replace('%data%', value)
-      .replace('%data-value%', value);
-    ulHeader.append(title);
-  });
+      main.header.append(HTMLcontentHeader);
+      $('#menu').slideDown();
 
-  $('#menu li').each( function () {
-    $(this).css('width', `${ 100 / uniqueValues.length }%`);
+      var ulHeader = $('#header ul');
+      var uniqueValues = unique(options.data, options.keyMenu);
+
+      uniqueValues.forEach( function (value) {
+        var title = options.html.replace('%data%', value)
+          .replace('%data-value%', value);
+        ulHeader.append(title);
+      });
+
+      $('#menu li').each( function () {
+        $(this).css('width', `${ 100 / uniqueValues.length }%`);
+      });
+
+      buildDropDownMenu(options);
+    }, 1000);
   });
 }
 
-function buildDropDownMenu(objects, key, html, callback, uniqueValue) {
+function animateMenu() {
+  $('body').append(HTMLdivAnimation);
+  var animationDot = $('.animation');
+  var position = $('.icon-projects').offset();
+  animationDot.css('left', position.left += 35 );
+  animationDot.css('top', position.top += 20 );
+
+  var headerPosition = $('#header').offset();
+  var menuWidth = parseInt($('.main-content').css('width'));
+
+  return animationDot.animate({
+    transition: '1s',
+    top: `${headerPosition.top}px`,
+    left: `${headerPosition.left}px`,
+    width: `${menuWidth}`
+  });
+}
+
+function buildDropDownMenu(options) {
   var li = $('#menu li');
   li.mouseenter(function () {
     $(this).append(HTMLdropdownMenu);
     var dataValue = $(this).data().value;
-    var specificObjects = findBy(objects, uniqueValue, dataValue);
+    var specificObjects = findBy(options.data, options.keyMenu, dataValue);
 
     specificObjects.forEach( function (specificObject) {
-      var menuItem = specificObject[key];
-      var item = html.replace('%data%', menuItem).replace('%data-value%', specificObject.id);
+      var menuItem = specificObject[options.keyDropdown];
+      var item = options.htmlDropdown.replace('%data%', menuItem).replace('%data-value%', specificObject.id);
       $('#dropdown').append(item);
       $('#dropdown li').addClass('dropdown-item');
-      showContentInfo(callback);
+      showContentInfo(options.build);
     });
   }).mouseleave(function () {
     $('#dropdown li').remove();
