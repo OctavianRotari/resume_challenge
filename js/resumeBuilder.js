@@ -4,7 +4,12 @@ const sideBar = {
   divHeader: $('#sidebar-header'),
   divContacts: $('#contacts'),
   showBar: true,
-  build: {}
+  display: function () {
+    addImageSidebar();
+    addHeaderInfo();
+    addContactsSidebar();
+    hideSidebar();
+  }
 };
 
 // main
@@ -22,38 +27,142 @@ const main = {
 
 // projects
 const myProjects = {
-  build: {},
   open: false,
-  icon: $('#projects')
+  options: {
+    keyMenu: 'language',
+    keyDropdown: 'title',
+    build: buildProject,
+    icon: $('#projects')
+  }
 };
+
+// project specific function
+//
+myProjects.getData = function () {
+  return $.get('js/json_data/projects.json');
+};
+
+myProjects.display = function (data) {
+  myProjects.options.data = data.projects;
+  buildHeader(myProjects.options);
+};
+
+// this is executed as a callback to the function showContentInfo
+
+function buildProject(dataValue) {
+  var projects = myProjects.options.data;
+  var project = projects.find(clicked, dataValue);
+
+  var title = HTMLprojectTitle.replace('%data%', project.title);
+  var date = HTMLprojectDate.replace('%data%', project.date);
+  var language = HTMLprojectLanguage.replace('%data%', project.language);
+  var frameworks = HTMLprojectFrameworks.replace('%data%', project.framewors);
+  var description = HTMLprojectDescription.replace('%data%', project.description);
+  var image = HTMLprojectImage.replace('%data%', project.image);
+
+  if (main.contentInfo.children().length !== 0) {
+    main.contentInfo.children().remove();
+  }
+  main.contentInfo.append(title, date, language, frameworks, description, image);
+}
 
 // jobs
 
 const myJobs = {
-  build: {},
   open: false,
-  icon: $('#work')
+  options: {
+    keyMenu: 'title',
+    keyDropdown: 'employer',
+    build: buildJob,
+    icon: $('#work')
+  }
 };
+
+// job specific function
+
+myJobs.getData = function () {
+  return $.get('js/json_data/work.json');
+};
+
+myJobs.display = function (data) {
+  myJobs.options.data = data.jobs;
+  buildHeader(myJobs.options);
+};
+
+// this is executed as a callback to the function showContentInfo
+
+function buildJob(dataValue) {
+  var jobs = myJobs.options.data;
+  var job = jobs.find(clicked, dataValue);
+
+  var employer = HTMLjobEmployer.replace('%data%', job.employer);
+  var title = HTMLjobTitle.replace('%data%', job.title);
+  var location = HTMLjobLocation.replace('%data%', job.location);
+  var dates = HTMLjobDate.replace('%data%', job.dates);
+  var description = HTMLjobDescription.replace('%data%', job.description);
+
+  if (main.contentInfo.children().length !== 0) {
+    main.contentInfo.children().remove();
+  }
+
+  main.contentInfo.append(employer, title, location, dates, description);
+}
 
 // education
 
 const myEducation = {
-  build: {},
   open: false,
-  icon: $('#education')
+  options: {
+    keyMenu: 'type',
+    keyDropdown: 'name',
+    build: buildCourses,
+    icon: $('#education')
+  }
 };
+
+// education specific function
+
+// this is executed as a callback to the function showContentInfo
+
+myEducation.getData = function () {
+  return $.get('js/json_data/education.json');
+};
+
+myEducation.display = function (data) {
+  myEducation.options.data = data.courses;
+  buildHeader(myEducation.options);
+};
+
+function buildCourses(dataValue) {
+  var courses = myEducation.options.data;
+  var course = courses.find(clicked, dataValue);
+
+  var name = HTMLeducationName.replace('%data%', course.name);
+  var location = HTMLeducationLocation.replace('%data%', course.location);
+  var date = HTMLeducationDate.replace('%data%', course.degreeDates);
+  var url = HTMLeducationUrl.replace('%data%', course.url).replace('%data%', course.name);
+  var description = HTMLeducationDescription.replace('%data%', course.description);
+  var grade = HTMLeducationGrade.replace('%data%', course.grade);
+
+  if (main.contentInfo.children().length !== 0) {
+    main.contentInfo.children().remove();
+  }
+  main.contentInfo.append(name, location, date, url, description, grade);
+}
+
+// functions for building the sidebar
 
 sideBar.getBio = function () {
   return $.get( 'js/json_data/bio.json');
 };
 
-sideBar.build.addImage = function  () {
+function  addImageSidebar() {
   var imageUrl = sideBar.data.pictureUrl;
   var image = HTMLimageSidebar.replace('%data%', imageUrl);
   sideBar.divSidebar.prepend(image);
-};
+}
 
-sideBar.build.addHeaderInfo = function () {
+function addHeaderInfo() {
   var bioName = sideBar.data.name;
   var bioRole = sideBar.data.role;
   var bioWelcomeMessage = sideBar.data.welcomeMessage;
@@ -63,9 +172,9 @@ sideBar.build.addHeaderInfo = function () {
   var welcomeMessage = HTMLwelcomeMessage.replace('%data%', bioWelcomeMessage);
 
   sideBar.divHeader.append(name, role, welcomeMessage);
-};
+}
 
-sideBar.build.addContacts = function () {
+function addContactsSidebar() {
   var contacts = sideBar.data.contacts;
   for ( var contact in contacts ) {
     var contactText = contacts[contact];
@@ -78,18 +187,18 @@ sideBar.build.addContacts = function () {
 
     lastContact.append(icon, text);
   }
-};
+}
 
-sideBar.build.hideSide = function () {
+function hideSidebar() {
   $('#hide-side-bar').click( function () {
     if ( sideBar.showBar ) {
-      closeSidebar()
+      closeSidebar();
     }
     else {
-      openSidebar()
+      openSidebar();
     }
   });
-};
+}
 
 function closeSidebar() {
   $('#main').addClass('slide-left');
@@ -103,16 +212,16 @@ function openSidebar() {
 
 $.when(sideBar.getBio()).done(function (data) {
   sideBar.data = data;
-  sideBar.build.addImage();
-  sideBar.build.addHeaderInfo();
-  sideBar.build.addContacts();
-  sideBar.build.hideSide();
+  sideBar.display();
+
   $(document).ready(function () {
     setTimeout(function () {
       closeSidebar();
     }, 1000);
   });
 });
+
+// when clicking an icon the relative content is displayed
 
 main.work.click(function () {
   onIconClick(myJobs);
@@ -137,14 +246,15 @@ function onIconClick(iconCategory) {
       $('#menu').promise().done( function () {
         closeIfOpen();
         iconCategory.open = true;
-        $.when(iconCategory.build.getData()).done(function (data) {
-          iconCategory.data = data;
-          iconCategory.build.header(iconCategory.icon);
+        $.when(iconCategory.getData()).done(function (data) {
+          iconCategory.display(data);
         });
       });
     });
   }
 }
+
+// close main content if open
 
 function closeIfOpen() {
   if ( myEducation.open === true ) {
@@ -166,135 +276,9 @@ function cleanMain() {
   main.contentInfo.empty();
 }
 
-myJobs.build.getData = function () {
-  return $.get('js/json_data/work.json');
-};
-
-myJobs.build.header = function (icon) {
-
-  var options = {
-    data: myJobs.data.jobs,
-    keyMenu: 'title',
-    keyDropdown: 'employer',
-    html: HTMLcontentMenu,
-    htmlDropdown: HTMLdropdownLiMenu,
-    build: buildProject,
-    icon: icon
-  };
-
-  buildHeader(options);
-};
-
-// job specific function
-
-// this is executed as a callback to the function showContentInfo
-
-function buildJob(dataValue) {
-  var jobs = myJobs.data.jobs;
-  var job = jobs.find(clicked, dataValue);
-
-  var employer = HTMLjobEmployer.replace('%data%', job.employer);
-  var title = HTMLjobTitle.replace('%data%', job.title);
-  var location = HTMLjobLocation.replace('%data%', job.location);
-  var dates = HTMLjobDate.replace('%data%', job.dates);
-  var description = HTMLjobDescription.replace('%data%', job.description);
-
-  if (main.contentInfo.children().length !== 0) {
-    main.contentInfo.children().remove();
-  }
-
-  main.contentInfo.append(employer, title, location, dates, description);
-}
-
 function slideUpContentInfo() {
   return $('#content-info').slideUp();
 }
-
-// projects
-
-myProjects.build.getData = function () {
-  return $.get('js/json_data/projects.json');
-};
-
-myProjects.build.header = function (icon) {
-
-  var options = {
-    data: myProjects.data.projects,
-    keyMenu: 'language',
-    keyDropdown: 'title',
-    html: HTMLcontentMenu,
-    htmlDropdown: HTMLdropdownLiMenu,
-    build: buildProject,
-    icon: icon
-  };
-
-  buildHeader(options);
-};
-
-// project specific function
-
-// this is executed as a callback to the function showContentInfo
-
-function buildProject(dataValue) {
-  var projects = myProjects.data.projects;
-  var project = projects.find(clicked, dataValue);
-
-  var title = HTMLprojectTitle.replace('%data%', project.title);
-  var date = HTMLprojectDate.replace('%data%', project.date);
-  var language = HTMLprojectLanguage.replace('%data%', project.language);
-  var frameworks = HTMLprojectFrameworks.replace('%data%', project.framewors);
-  var description = HTMLprojectDescription.replace('%data%', project.description);
-  var image = HTMLprojectImage.replace('%data%', project.image);
-
-  if (main.contentInfo.children().length !== 0) {
-    main.contentInfo.children().remove();
-  }
-  main.contentInfo.append(title, date, language, frameworks, description, image);
-}
-
-// education
-
-myEducation.build.getData = function () {
-  return $.get('js/json_data/education.json');
-};
-
-myEducation.build.header = function (icon) {
-
-  var options = {
-    data: myEducation.data.courses,
-    keyMenu: 'type',
-    keyDropdown: 'name',
-    html: HTMLcontentMenu,
-    htmlDropdown: HTMLdropdownLiMenu,
-    build: buildCourses,
-    icon: icon
-  };
-
-  buildHeader(options);
-};
-
-// education specific function
-
-// this is executed as a callback to the function showContentInfo
-
-function buildCourses(dataValue) {
-  var courses = myEducation.data.courses;
-  var course = courses.find(clicked, dataValue);
-
-  var name = HTMLeducationName.replace('%data%', course.name);
-  var location = HTMLeducationLocation.replace('%data%', course.location);
-  var date = HTMLeducationDate.replace('%data%', course.degreeDates);
-  var url = HTMLeducationUrl.replace('%data%', course.url).replace('%data%', course.name);
-  var description = HTMLeducationDescription.replace('%data%', course.description);
-  var grade = HTMLeducationGrade.replace('%data%', course.grade);
-
-  if (main.contentInfo.children().length !== 0) {
-    main.contentInfo.children().remove();
-  }
-  main.contentInfo.append(name, location, date, url, description, grade);
-}
-
-// common functions
 
 function buildHeader(options) {
   animateMenu(options.icon).promise().done(function () {
@@ -308,7 +292,7 @@ function buildHeader(options) {
       var uniqueValues = unique(options.data, options.keyMenu);
 
       uniqueValues.forEach( function (value) {
-        var title = options.html.replace('%data%', value)
+        var title = HTMLcontentMenu.replace('%data%', value)
           .replace('%data-value%', value);
         ulHeader.append(title);
       });
@@ -349,7 +333,7 @@ function buildDropDownMenu(options) {
 
     specificObjects.forEach( function (specificObject) {
       var menuItem = specificObject[options.keyDropdown];
-      var item = options.htmlDropdown.replace('%data%', menuItem).replace('%data-value%', specificObject.id);
+      var item = HTMLdropdownLiMenu.replace('%data%', menuItem).replace('%data-value%', specificObject.id);
       $('#dropdown').append(item);
       $('#dropdown li').addClass('dropdown-item');
       showContentInfo(options.build);
