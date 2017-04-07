@@ -82,7 +82,7 @@ function initializeWhenReady(locations, html) {
   });
 }
 
-(getLocationsInitializeMap)();
+$('#main').one('transitionend', getLocationsInitializeMap);
 
 window.addEventListener('resize', function (e) {
   map.fitBounds(mapBounds);
