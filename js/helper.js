@@ -48,3 +48,4 @@ const HTMLeducationGrade = '<h5 id="education-grade">%data%</h5>';
 // div for animation
 
 const HTMLdivAnimation = '<div class="animation"></div>';
+const googleMap = '<div id="map"></div>';

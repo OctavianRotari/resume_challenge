@@ -1,3 +1,7 @@
+getBio = function () {
+  return $.get( 'js/json_data/bio.json');
+};
+
 // sidebar
 const sideBar = {
   divSidebar: $('#sidebar'),
@@ -78,12 +82,6 @@ const myJobs = {
   }
 };
 
-// job specific function
-
-myJobs.getData = function () {
-  return $.get('js/json_data/work.json');
-};
-
 myJobs.display = function (data) {
   myJobs.options.data = data.jobs;
   buildHeader(myJobs.options);
@@ -120,18 +118,12 @@ const myEducation = {
   }
 };
 
-// education specific function
-
-// this is executed as a callback to the function showContentInfo
-
-myEducation.getData = function () {
-  return $.get('js/json_data/education.json');
-};
-
 myEducation.display = function (data) {
   myEducation.options.data = data.courses;
   buildHeader(myEducation.options);
 };
+
+// this is executed as a callback to the function showContentInfo
 
 function buildCourses(dataValue) {
   var courses = myEducation.options.data;
@@ -151,10 +143,6 @@ function buildCourses(dataValue) {
 }
 
 // functions for building the sidebar
-
-sideBar.getBio = function () {
-  return $.get( 'js/json_data/bio.json');
-};
 
 function  addImageSidebar() {
   var imageUrl = sideBar.data.pictureUrl;
@@ -210,7 +198,7 @@ function openSidebar() {
   sideBar.showBar = true;
 }
 
-$.when(sideBar.getBio()).done(function (data) {
+$.when(getBio()).done(function (data) {
   sideBar.data = data;
   sideBar.display();
 
@@ -241,12 +229,17 @@ function onIconClick(iconCategory) {
     return;
   }
   else {
+    if ( $('#map').css('display') !== 'none') {
+      $('#map').fadeOut('slow', function () {
+        $(this).remove();
+      });
+    }
     $('#menu').slideUp();
     slideUpContentInfo().promise().done( function () {
       $('#menu').promise().done( function () {
         closeIfOpen();
         iconCategory.open = true;
-        $.when(iconCategory.getData()).done(function (data) {
+        $.when(getBio()).done(function (data) {
           iconCategory.display(data);
         });
       });

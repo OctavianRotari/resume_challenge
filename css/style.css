@@ -109,14 +109,14 @@
 }
 
 #icons-resume div{
-  margin-bottom: 100px;
+  margin-bottom: 70px;
 }
 
 #icons-resume img{
   height: 70px;
 }
 
-#icons-resume .icon-education{
+#icons-resume .icon-map{
   margin-bottom: 0;
 }
 
@@ -143,6 +143,16 @@
 }
 
 .main-content {
+  min-height: 54.75%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  min-width: 70%;
+  margin: auto;
+}
+
+#map {
   min-height: 54.75%;
   left: 50%;
   top: 50%;

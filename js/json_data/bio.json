@@ -6,9 +6,120 @@
     "mail": "octavianrotari@gmail.com",
     "github": "OctavianRotari",
     "twitter": "@octavianrotari1",
-    "position": "Edinburgh"
+    "location": "Edinburgh"
   },
   "pictureUrl": "img/Potato.png",
   "welcomeMessage": "I’m an enthusiastic web developer recently moved to Edinburgh. I’m curently looking for job opportunitues and i want to meet other fellow coders.",
-  "skills": [ "Creative", "Communicative", "Reactive", "Organized" ]
+  "skills": [ "Creative", "Communicative", "Reactive", "Organized" ],
+  "jobs": [
+    {
+      "id": 0,
+      "employer": "Camillo B.",
+      "title": "Bartender",
+      "location": "Roma",
+      "dates": "07/2016-12/2016",
+      "description": "Qualified bartender in a prestigious cocktail bar"
+    },{
+      "id": 1,
+      "employer": "Kalima B.",
+      "title": "Bartender",
+      "location": "Maiorca",
+      "dates": "05/2016-07/2016",
+      "description": "Main barteder in one of the most famous restaurant in Maiorca"
+    },{
+      "id": 2,
+      "employer": "Rotari Aut.",
+      "title": "Mechanic",
+      "location": "Ravenna",
+      "dates": "10/2012-05/2015",
+      "description": "Worked as mechanic but also as a cosuntalt for the CEO"
+    },{
+      "id": 3,
+      "employer": "Mattioli Car.",
+      "title": "Mechanic",
+      "location": "Mantova",
+      "dates": "07/2012-10/2012",
+      "description": "Mechanic aphrendistat"
+    }
+  ],
+  "courses": [
+    {
+      "id": 0,
+      "name": "ITC G. Ginanni",
+      "location": "Ravenna",
+      "degreeDates": 3,
+      "grade": 3,
+      "type": "School",
+      "url": "bank",
+      "majors": ["Raggioniere"]
+    },
+    {
+      "id": 1,
+      "name": "ITIS Mantova",
+      "location": "Ravenna",
+      "degreeDates": 3,
+      "grade": 3,
+      "type": "School",
+      "url": "bank",
+      "majors": ["Raggioniere"]
+    },
+    {
+      "id": 2,
+      "name": "Design",
+      "location": "Ravenna",
+      "degreeDates": 3,
+      "grade": 3,
+      "type": "On-line",
+      "url": "bank",
+      "majors": ["Raggioniere"]
+    },
+    {
+      "id": 3,
+      "name": "Makers Academy",
+      "location": "Ravenna",
+      "degreeDates": 3,
+      "grade": 3,
+      "type": "On-line",
+      "url": "bank",
+      "majors": ["Raggioniere"]
+    }
+  ],
+  "projects": [
+    {
+      "id": 0,
+      "title": "Hello javascript",
+      "dates": "07/2012-10/2012",
+      "description": "Main barteder in one of the most famous restaurant in Maiorca",
+      "language": "javascript",
+      "frameworks": "jQuery",
+      "images": ""
+    },
+    {
+      "id": 1,
+      "title": "Hello ruby",
+      "dates": "07/2012-10/2012",
+      "description": "Main barteder in one of the most famous restaurant in Maiorca",
+      "language": "ruby",
+      "frameworks": "Ruby on Rails",
+      "images": ""
+    },
+    {
+      "id": 2,
+      "title": "Hello html-css",
+      "dates": "07/2012-10/2012",
+      "description": "Main barteder in one of the most famous restaurant in Maiorca",
+      "language": "HTML-CSS",
+      "frameworks": "SASS",
+      "images": ""
+    },
+    {
+      "id": 3,
+      "title": "Hello php",
+      "dates": "07/2012-10/2012",
+      "description": "Main barteder in one of the most famous restaurant in Maiorca",
+      "language": "PHP",
+      "frameworks": "Bootstrap",
+      "images": ""
+    }
+  ]
 }
