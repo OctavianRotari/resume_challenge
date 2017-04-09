@@ -67,7 +67,10 @@ function buildProject(dataValue) {
   if (main.contentInfo.children().length !== 0) {
     main.contentInfo.children().remove();
   }
-  main.contentInfo.append(title, date, language, frameworks, description, image);
+
+  main.contentInfo.append(HTMLdivText, HTMLdivImage);
+  $('.text').append(title, date, language, frameworks, description);
+  $('.image').append(image);
 }
 
 // jobs
@@ -103,7 +106,8 @@ function buildJob(dataValue) {
     main.contentInfo.children().remove();
   }
 
-  main.contentInfo.append(employer, title, location, dates, description);
+  main.contentInfo.append(HTMLdivText);
+  $('.text').append(employer, title, location, dates, description);
 }
 
 // education
@@ -139,7 +143,9 @@ function buildCourses(dataValue) {
   if (main.contentInfo.children().length !== 0) {
     main.contentInfo.children().remove();
   }
-  main.contentInfo.append(name, location, date, url, description, grade);
+
+  main.contentInfo.append(HTMLdivText);
+  $('.text').append(name, location, date, url, description, grade);
 }
 
 // functions for building the sidebar

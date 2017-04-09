@@ -45,6 +45,9 @@ const HTMLeducationUrl = '<h5 id="education-url"><a href="%data%">%data%</a></h5
 const HTMLeducationDescription = '<p id="education-description">%data%</p>';
 const HTMLeducationGrade = '<h5 id="education-grade">%data%</h5>';
 
+
+const HTMLdivText = '<div class="text"></div>'
+const HTMLdivImage = '<div class="image"></div>'
 // div for animation
 
 const HTMLdivAnimation = '<div class="animation"></div>';
