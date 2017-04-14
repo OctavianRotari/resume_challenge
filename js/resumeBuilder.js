@@ -130,22 +130,30 @@ myEducation.display = function (data) {
 // this is executed as a callback to the function showContentInfo
 
 function buildCourses(dataValue) {
+  var location;
+  var grade;
   var courses = myEducation.options.data;
   var course = courses.find(clicked, dataValue);
-
   var name = HTMLeducationName.replace('%data%', course.name);
-  var location = HTMLeducationLocation.replace('%data%', course.location);
   var date = HTMLeducationDate.replace('%data%', course.degreeDates);
   var url = HTMLeducationUrl.replace('%data%', course.url).replace('%data%', course.name);
   var description = HTMLeducationDescription.replace('%data%', course.description);
-  var grade = HTMLeducationGrade.replace('%data%', course.grade);
+  var image = HTMLeducationCertificate.replace('%data%', course.certificate);
+
+  if ( course.location ) {
+    location = HTMLeducationLocation.replace('%data%', course.location);
+  }
+  if ( course.grade ) {
+    grade = HTMLeducationGrade.replace('%data%', course.grade);
+  }
 
   if (main.contentInfo.children().length !== 0) {
     main.contentInfo.children().remove();
   }
 
-  main.contentInfo.append(HTMLdivText);
-  $('.text').append(name, location, date, url, description, grade);
+  main.contentInfo.append(HTMLdivText, HTMLdivImage);
+  $('.text').append(name, location, date, url, grade, description);
+  $('.image').append(image);
 }
 
 // functions for building the sidebar
@@ -301,7 +309,7 @@ function buildHeader(options) {
       });
 
       buildDropDownMenu(options);
-    }, 1000);
+    });
   });
 }
 
@@ -309,18 +317,17 @@ function animateMenu(icon) {
   $('body').append(HTMLdivAnimation);
   var animationDot = $('.animation');
   var position = icon.offset();
-  animationDot.css('left', position.left += 35 );
-  animationDot.css('top', position.top += 20 );
-
   var headerPosition = $('#header').offset();
   var menuWidth = parseInt($('.main-content').css('width'));
 
   return animationDot.animate({
-    transition: '1s',
+    left: `${position.left += 35}px`,
+    top: `${position.top += 20}px`
+  }).animate({
     top: `${headerPosition.top}px`,
     left: `${headerPosition.left}px`,
     width: `${menuWidth}`
-  });
+  }, 1000, 'easeOutQuart');
 }
 
 function buildDropDownMenu(options) {
@@ -353,12 +360,16 @@ function showContentInfo(callback) {
       if ($('#content-info').children().length !== 0) {
         slideUpContentInfo().promise().done( function () {
           callback(dataValue);
-          $('#content-info').slideDown();
+          $('#content-info').slideDown(500, function () {
+            $(this).css('display', 'flex');
+          });
         });
       }
       else {
         callback(dataValue);
-        $('#content-info').slideDown();
+        $('#content-info').slideDown(500, function () {
+          $(this).css('display', 'flex');
+        });
       }
     });
   });

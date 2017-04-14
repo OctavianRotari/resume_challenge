@@ -69,7 +69,9 @@ function getLocationsInitializeMap() {
     });
 
     data.courses.forEach( function (course) {
-      locations.push(course.location);
+      if (course.location) {
+        locations.push(course.location);
+      }
     });
 
     initializeWhenReady(locations, googleMap);

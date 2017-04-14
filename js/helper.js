@@ -44,10 +44,10 @@ const HTMLeducationDate = '<h5 id="education-dates">%data%</h5>';
 const HTMLeducationUrl = '<h5 id="education-url"><a href="%data%">%data%</a></h5>';
 const HTMLeducationDescription = '<p id="education-description">%data%</p>';
 const HTMLeducationGrade = '<h5 id="education-grade">%data%</h5>';
+const HTMLeducationCertificate = '<img src="%data%" alt="">';
 
-
-const HTMLdivText = '<div class="text"></div>'
-const HTMLdivImage = '<div class="image"></div>'
+const HTMLdivText = '<div class="text"></div>';
+const HTMLdivImage = '<div class="image"></div>';
 // div for animation
 
 const HTMLdivAnimation = '<div class="animation"></div>';

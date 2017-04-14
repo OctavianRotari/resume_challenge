@@ -45,43 +45,81 @@
   "courses": [
     {
       "id": 0,
-      "name": "ITC G. Ginanni",
-      "location": "Ravenna",
-      "degreeDates": 3,
-      "grade": 3,
-      "type": "School",
+      "name": "Makers Academy",
+      "location": "London, England",
+      "degreeDates": "09/2015-02/2016",
+      "grade": null,
+      "type": "In-class",
       "url": "bank",
-      "majors": ["Raggioniere"]
+      "majors": null,
+      "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
     },
     {
       "id": 1,
-      "name": "ITIS Mantova",
+      "name": "ITC G. Ginanni",
       "location": "Ravenna",
-      "degreeDates": 3,
-      "grade": 3,
-      "type": "School",
+      "degreeDates": "09/2012-05/2015",
+      "grade": "98",
+      "type": "In-class",
       "url": "bank",
-      "majors": ["Raggioniere"]
+      "majors": "Accountant Diploma",
+      "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
     },
     {
       "id": 2,
-      "name": "Design",
-      "location": "Ravenna",
-      "degreeDates": 3,
-      "grade": 3,
-      "type": "On-line",
+      "name": "ITIS Mantova",
+      "location": "Mantova",
+      "degreeDates": "09/2008-05/2011",
+      "grade": "70",
+      "type": "In-class",
       "url": "bank",
-      "majors": ["Raggioniere"]
+      "majors": "Industrial Mechanics Diploma",
+      "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
     },
     {
       "id": 3,
-      "name": "Makers Academy",
-      "location": "Ravenna",
-      "degreeDates": 3,
-      "grade": 3,
+      "name": "SEO Traning Accademy",
+      "location": null,
+      "degreeDates": "02/2017-03/2017",
+      "grade": null,
       "type": "On-line",
       "url": "bank",
-      "majors": ["Raggioniere"]
+      "majors": null,
+      "certificate": "img/certificates/seo_training_accademy.png",
+      "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
+    },
+    {
+      "id": 4,
+      "name": "Master PHP",
+      "location": null,
+      "degreeDates": "08/2016-12/2016",
+      "grade": null,
+      "type": "On-line",
+      "url": "bank",
+      "majors": null,
+      "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
+    },
+    {
+      "id": 5,
+      "name": "Responsive Websites",
+      "location": null,
+      "degreeDates": "09/2016-11/2016",
+      "grade": null,
+      "type": "On-line",
+      "url": "bank",
+      "majors": null,
+      "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
+    },
+    {
+      "id": 6,
+      "name": "Advanced JavaScript",
+      "location": null,
+      "degreeDates": "09/2016-11/2016",
+      "grade": null,
+      "type": "On-line",
+      "url": "bank",
+      "majors": null,
+      "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
     }
   ],
   "projects": [
