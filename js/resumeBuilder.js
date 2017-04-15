@@ -136,7 +136,6 @@ function buildCourses(dataValue) {
   var course = courses.find(clicked, dataValue);
   var name = HTMLeducationName.replace('%data%', course.name);
   var date = HTMLeducationDate.replace('%data%', course.degreeDates);
-  var url = HTMLeducationUrl.replace('%data%', course.url).replace('%data%', course.name);
   var description = HTMLeducationDescription.replace('%data%', course.description);
   var image = HTMLeducationCertificate.replace('%data%', course.certificate);
 
@@ -152,7 +151,7 @@ function buildCourses(dataValue) {
   }
 
   main.contentInfo.append(HTMLdivText, HTMLdivImage);
-  $('.text').append(name, location, date, url, grade, description);
+  $('.text').append(name, location, date, grade, description);
   $('.image').append(image);
 }
 
@@ -360,18 +359,24 @@ function showContentInfo(callback) {
       if ($('#content-info').children().length !== 0) {
         slideUpContentInfo().promise().done( function () {
           callback(dataValue);
-          $('#content-info').slideDown(500, function () {
-            $(this).css('display', 'flex');
-          });
+          slideDownContentInfo();
         });
       }
       else {
         callback(dataValue);
-        $('#content-info').slideDown(500, function () {
-          $(this).css('display', 'flex');
-        });
+        slideDownContentInfo();
       }
     });
+  });
+}
+
+function slideDownContentInfo() {
+  $('#content-info').slideDown({
+    start: function () {
+      $(this).css({
+        display: 'flex'
+      });
+    }
   });
 }
 

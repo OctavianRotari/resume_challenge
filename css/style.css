@@ -10,7 +10,7 @@
   display: inline-block;
   width: 23%;
   float: left;
-  background-color: #336633;
+  background-color: #ffa236;
   height: 100vh;
 }
 
@@ -28,7 +28,7 @@
 }
 
 #sidebar-header {
-  color: #e7e5ce;
+  color: #000;;
 }
 
 #sidebar-header h1{
@@ -69,7 +69,7 @@
 }
 
 #contacts p {
-  color: #e7e5ce;
+  color: #000;
   display: inline-block;
   margin-left: 10px;
   position: absolute;
@@ -83,11 +83,13 @@
 }
 
 .main {
+  background-image: url('../img/me-train.jpg');
+  background-size: cover;
   position: absolute;
   z-index: 9;
   left: 23%;
   transition: 1s;
-  background: #fff;
+  /*background: #fff;*/
   display: inline-block;
   width: 77%;
   margin: auto;
@@ -155,7 +157,6 @@
 }
 
 .text, .image {
-  display: inline-block;
   width: 50%;
   color: #fff;
 }
@@ -168,28 +169,58 @@
   position: absolute;
   min-width: 70%;
   margin: auto;
+  box-shadow: 0px 10px 25px 2px rgba(0, 0, 0, 0.51);
 }
 
 #content-info {
   color: #e7e5ce;
-  height: 370px;
+  height: 400px;
   margin: auto;
   display: none;
-  background-color: #3399cc;
-  box-shadow: 0px 10px 25px -5px rgba(0,0,0,0.30);
+  background-color: rgba(51, 153, 204, 0.8);
+  box-shadow: 0px 10px 25px 2px rgba(0, 0, 0, 0.51);
 }
 
 #content-info h4:first-child{
   margin-top:0;
 }
 
+#content-info .text {
+  text-align: left;
+  padding: 20px;
+}
+
+#content-info .text h4{
+  font-family: helvetica;
+  font-size: 1.71em;
+}
+
+#content-info .text h4 a{
+  text-decoration: none;
+  color: #fff;
+}
+
+#content-info .text h4 a:hover{
+  color: #4e2e69;
+}
+
+#content-info .text h5{
+  margin-bottom: 1em;
+  margin-top: 0.71em;
+  text-align: left;
+}
+
 #content-info .image {
   height: 100%;
+  position: relative;
 }
 
 #content-info img {
-  max-width: 70%;
-  transform: translateY(20%);
+  position: absolute;
+  max-width: 75%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
 }
 
 #dropdown {

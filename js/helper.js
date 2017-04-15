@@ -37,14 +37,13 @@ const HTMLprojectDescription = '<p id="project-description">%data%</p>';
 const HTMLprojectImage = '<img src="%data%" alt="">';
 
 // education
-const HTMLeducationName = '<h4 id="education-name">%data%</h4>';
+const HTMLeducationName = '<h4 id="education-name"><a href="blank">%data%</a></h4>';
 const HTMLeducationLocation = '<h5 id="education-location">%data%</h5>';
 const HTMLeducationType = '<h5 id="education-type">%data%</h5>';
 const HTMLeducationDate = '<h5 id="education-dates">%data%</h5>';
-const HTMLeducationUrl = '<h5 id="education-url"><a href="%data%">%data%</a></h5>';
 const HTMLeducationDescription = '<p id="education-description">%data%</p>';
-const HTMLeducationGrade = '<h5 id="education-grade">%data%</h5>';
-const HTMLeducationCertificate = '<img src="%data%" alt="">';
+const HTMLeducationGrade = '<h5 id="education-grade">Grade: %data%%</h5>';
+const HTMLeducationCertificate = '<img class="certificate" src="%data%" alt="">';
 
 const HTMLdivText = '<div class="text"></div>';
 const HTMLdivImage = '<div class="image"></div>';
