@@ -151,7 +151,7 @@ function buildCourses(dataValue) {
 
   if ( course.location ) {
     location = HTMLeducationLocation.replace('%data%', course.location);
-    initializeWhenReady([ course.location ], '.multimedia', googleMapSmall);
+    initSmallMap( [ course.location ] );
   }
 
   $('.text').append(name, location, date, grade, description);
@@ -161,8 +161,6 @@ function buildCourses(dataValue) {
     $('.multimedia').append(image);
   }
 
-  $('.text').fadeIn();
-  $('.multimedia').fadeIn();
 }
 
 // functions for building the sidebar
@@ -366,12 +364,16 @@ function showContentInfo(callback) {
         slideUpContentInfo().promise().done( function () {
           slideDownContentInfo().promise().done(function () {
             callback(dataValue);
+            $('.text').fadeIn();
+            $('.multimedia').fadeIn();
           });
         });
       }
       else {
         slideDownContentInfo().promise().done(function () {
           callback(dataValue);
+            $('.text').fadeIn();
+            $('.multimedia').fadeIn();
         });
       }
     });

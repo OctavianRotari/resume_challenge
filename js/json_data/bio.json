@@ -46,7 +46,7 @@
     {
       "id": 0,
       "name": "Makers Academy",
-      "location": "London, England",
+      "location": "Makers Academy, Commercial Street, City of London, United Kingdom",
       "degreeDates": "09/2015-02/2016",
       "grade": null,
       "type": "In-class",
@@ -57,7 +57,7 @@
     {
       "id": 1,
       "name": "ITC G. Ginanni",
-      "location": "Ravenna, Italy",
+      "location": "ITC G. Ginanni, Via Giosuè Carducci, 11, 48100 Ravenna RA, Italy",
       "degreeDates": "09/2012-05/2015",
       "grade": "98",
       "type": "In-class",
@@ -68,7 +68,7 @@
     {
       "id": 2,
       "name": "ITIS Mantova",
-      "location": "Mantova, Italy",
+      "location": "ITIS, Strada Spolverina, 5, 46100 Mantova MN, Italy",
       "degreeDates": "09/2008-05/2011",
       "grade": "70",
       "type": "In-class",
@@ -79,7 +79,7 @@
     {
       "id": 3,
       "name": "EBS Bartender",
-      "location": "Stockholm, Sweden",
+      "location": "EBS, Luntmakargatan 36, 111 37 Stockholm, Sweden",
       "degreeDates": "08/2015-09/2015",
       "grade": "88",
       "type": "In-class",

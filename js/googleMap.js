@@ -38,39 +38,9 @@ function initializeMap(locations, container, mapDiv) {
     map.setCenter(bounds.getCenter());
   }
 
-  function createSingleMarker(placeData) {
-    var lat = placeData.geometry.location.lat();  // latitude from the place service
-    var lon = placeData.geometry.location.lng();  // longitude from the place service
-
-    var markerLatLng = {
-      lat: lat,
-      lng: lon
-    };
-
-    var name = placeData.formatted_address;   // name of the place from the place service
-
-    mapOptions.zoom = 10;
-    mapOptions.center = markerLatLng;
-
-    map = new google.maps.Map(document.querySelector('#map'), mapOptions);
-
-    var marker = new google.maps.Marker({
-      map: map,
-      position: markerLatLng,
-      title: name
-    });
-
-    map.setCenter(markerLatLng);
-  }
-
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-      if ( locations.length > 1) {
-        createMapMarker(results[0]);
-      }
-      else {
-        createSingleMarker(results[0]);
-      }
+      createMapMarker(results[0]);
     }
   }
 
@@ -111,14 +81,14 @@ function getLocationsInitializeMap() {
 function initializeWhenReady(locations, container, mapDiv) {
   $(document).ready(function () {
     initializeMap(locations, container, mapDiv);
+
+    $('#map').on('resize', function (e) {
+      map.fitBounds(mapBounds);
+    });
   });
 }
 
 $('#main').one('transitionend', getLocationsInitializeMap);
-
-window.addEventListener('resize', function (e) {
-  map.fitBounds(mapBounds);
-});
 
 $(document).ready(function () {
   $('#icon-map').click(function (evt) {
