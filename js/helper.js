@@ -46,8 +46,9 @@ const HTMLeducationGrade = '<h5 id="education-grade">Grade: %data%%</h5>';
 const HTMLeducationCertificate = '<img class="certificate" src="%data%" alt="">';
 
 const HTMLdivText = '<div class="text"></div>';
-const HTMLdivImage = '<div class="image"></div>';
+const HTMLdivMultimedia = '<div class="multimedia"></div>';
 // div for animation
 
 const HTMLdivAnimation = '<div class="animation"></div>';
-const googleMap = '<div id="map"></div>';
+const googleMap = '<div id="map" class="map-big"></div>';
+const googleMapSmall = '<div id="map" class="map-small"></div>';

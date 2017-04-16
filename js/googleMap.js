@@ -1,8 +1,8 @@
 var map;    // declares a global map variable
 
-function initializeMap(locations, html) {
+function initializeMap(locations, container, mapDiv) {
 
-  $('.main').append(html);
+  $(container).append(mapDiv);
 
   var mapOptions = {
     disableDefaultUI: true
@@ -30,7 +30,7 @@ function initializeMap(locations, html) {
 
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function () {
-      // your code goes here!
+      //debugger;
     });
 
     bounds.extend(new google.maps.LatLng(lat, lon));
@@ -38,9 +38,39 @@ function initializeMap(locations, html) {
     map.setCenter(bounds.getCenter());
   }
 
+  function createSingleMarker(placeData) {
+    var lat = placeData.geometry.location.lat();  // latitude from the place service
+    var lon = placeData.geometry.location.lng();  // longitude from the place service
+
+    var markerLatLng = {
+      lat: lat,
+      lng: lon
+    };
+
+    var name = placeData.formatted_address;   // name of the place from the place service
+
+    mapOptions.zoom = 10;
+    mapOptions.center = markerLatLng;
+
+    map = new google.maps.Map(document.querySelector('#map'), mapOptions);
+
+    var marker = new google.maps.Marker({
+      map: map,
+      position: markerLatLng,
+      title: name
+    });
+
+    map.setCenter(markerLatLng);
+  }
+
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-      createMapMarker(results[0]);
+      if ( locations.length > 1) {
+        createMapMarker(results[0]);
+      }
+      else {
+        createSingleMarker(results[0]);
+      }
     }
   }
 
@@ -53,9 +83,9 @@ function initializeMap(locations, html) {
       service.textSearch(request, callback);
     });
   }
+
   window.mapBounds = new google.maps.LatLngBounds();
   pinPoster(locations);
-
 }
 
 function getLocationsInitializeMap() {
@@ -74,13 +104,13 @@ function getLocationsInitializeMap() {
       }
     });
 
-    initializeWhenReady(locations, googleMap);
+    initializeWhenReady(locations, '.main', googleMap );
   });
 }
 
-function initializeWhenReady(locations, html) {
+function initializeWhenReady(locations, container, mapDiv) {
   $(document).ready(function () {
-    initializeMap(locations, html);
+    initializeMap(locations, container, mapDiv);
   });
 }
 

@@ -68,9 +68,9 @@ function buildProject(dataValue) {
     main.contentInfo.children().remove();
   }
 
-  main.contentInfo.append(HTMLdivText, HTMLdivImage);
+  main.contentInfo.append(HTMLdivText, HTMLdivMultimedia);
   $('.text').append(title, date, language, frameworks, description);
-  $('.image').append(image);
+  $('.multimedia').append(image);
 }
 
 // jobs
@@ -132,16 +132,13 @@ myEducation.display = function (data) {
 function buildCourses(dataValue) {
   var location;
   var grade;
+  var image;
   var courses = myEducation.options.data;
   var course = courses.find(clicked, dataValue);
   var name = HTMLeducationName.replace('%data%', course.name);
   var date = HTMLeducationDate.replace('%data%', course.degreeDates);
   var description = HTMLeducationDescription.replace('%data%', course.description);
-  var image = HTMLeducationCertificate.replace('%data%', course.certificate);
 
-  if ( course.location ) {
-    location = HTMLeducationLocation.replace('%data%', course.location);
-  }
   if ( course.grade ) {
     grade = HTMLeducationGrade.replace('%data%', course.grade);
   }
@@ -150,9 +147,22 @@ function buildCourses(dataValue) {
     main.contentInfo.children().remove();
   }
 
-  main.contentInfo.append(HTMLdivText, HTMLdivImage);
+  main.contentInfo.append(HTMLdivText, HTMLdivMultimedia);
+
+  if ( course.location ) {
+    location = HTMLeducationLocation.replace('%data%', course.location);
+    initializeWhenReady([ course.location ], '.multimedia', googleMapSmall);
+  }
+
   $('.text').append(name, location, date, grade, description);
-  $('.image').append(image);
+
+  if ( course.certificate ) {
+    image = HTMLeducationCertificate.replace('%data%', course.certificate);
+    $('.multimedia').append(image);
+  }
+
+  $('.text').fadeIn();
+  $('.multimedia').fadeIn();
 }
 
 // functions for building the sidebar
@@ -282,10 +292,6 @@ function cleanMain() {
   main.contentInfo.empty();
 }
 
-function slideUpContentInfo() {
-  return $('#content-info').slideUp();
-}
-
 function buildHeader(options) {
   animateMenu(options.icon).promise().done(function () {
     setTimeout(function () {
@@ -358,20 +364,27 @@ function showContentInfo(callback) {
       var dataValue = $(this).data().value;
       if ($('#content-info').children().length !== 0) {
         slideUpContentInfo().promise().done( function () {
-          callback(dataValue);
-          slideDownContentInfo();
+          slideDownContentInfo().promise().done(function () {
+            callback(dataValue);
+          });
         });
       }
       else {
-        callback(dataValue);
-        slideDownContentInfo();
+        slideDownContentInfo().promise().done(function () {
+          callback(dataValue);
+        });
       }
     });
   });
 }
 
+function slideUpContentInfo() {
+  $('#content-info').children().fadeOut();
+  return $('#content-info').slideUp();
+}
+
 function slideDownContentInfo() {
-  $('#content-info').slideDown({
+  return $('#content-info').slideDown({
     start: function () {
       $(this).css({
         display: 'flex'
