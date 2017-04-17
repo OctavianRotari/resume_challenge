@@ -2,7 +2,9 @@ var map;    // declares a global map variable
 
 function initializeMap(locations, container, mapDiv) {
 
-  $(container).append(mapDiv);
+  google.maps.event.addListenerOnce(map, 'idle', function(){
+    $(container).append(mapDiv);
+  });
 
   var mapOptions = {
     disableDefaultUI: true
@@ -22,7 +24,8 @@ function initializeMap(locations, container, mapDiv) {
     var marker = new google.maps.Marker({
       map: map,
       position: placeData.geometry.location,
-      title: name
+      title: name,
+      animation: google.maps.Animation.DROP
     });
 
     var infoWindow = new google.maps.InfoWindow({
