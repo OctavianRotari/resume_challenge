@@ -107,7 +107,7 @@ function buildJob(dataValue) {
   }
 
   if ( job.location ) {
-    location = HTMLjobLocation.replace('%data%', job.location);
+    //location = HTMLjobLocation.replace('%data%', job.location);
     initSmallMap( [ job.location ] );
   }
 

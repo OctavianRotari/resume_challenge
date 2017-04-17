@@ -208,15 +208,22 @@
 }
 
 .places {
-  color: #ecf0f1;
-  font-size: 2em;
+  padding: 30px;
+  color: #fff;
+  font-size: 1.5em;
   position: absolute;
   z-index: 9;
-  text-align: center;
-  width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.51), rgba(0, 0, 0, 0.00) );
-  text-transform: uppercase;
+  text-align: left;
   font-family: 'Open Sans', sans-serif;
+  line-height: 1.2em;
+  letter-spacing: 0.15em;
+}
+
+.places span{
+  color: #7597b5;
+  text-transform: uppercase;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 2em;
 }
 
 .map-small {

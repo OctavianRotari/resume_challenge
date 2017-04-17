@@ -19,7 +19,7 @@ const HTMLcontentMenu = '<li data-value="%data-value%">%data%</li>';
 // jobs
 const HTMLjobEmployer = '<h4 id="employer">%data%</h4>';
 const HTMLjobTitle = '<h5 id="job-title">%data%</h5>';
-const HTMLjobLocation = '<h5 id="job-location">%data%</h5>';
+//const HTMLjobLocation = '<h5 id="job-location">%data%</h5>';
 const HTMLjobDate = '<h5 id="job-dates">%data%</h5>';
 const HTMLjobDescription = '<p id="job-description">%data%</p>';
 
@@ -51,5 +51,5 @@ const HTMLdivMultimedia = '<div class="multimedia"></div>';
 
 const HTMLdivAnimation = '<div class="animation"></div>';
 const googleMap = '<div id="map" class="map-big"></div>';
-const HTMLplaces = '<h2 class="places">Places I worked and lived in</h2>';
+const HTMLplaces = '<h2 class="places">Places I</br><span>worked</span></br>and</br><span>lived in</span></h2>';
 const googleMapSmall = '<iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCEcdmaS5zsj8QJBFnvNTvjkbeDliYHXz4&q=place_id:%data%" allowfullscreen></iframe>';

@@ -31,7 +31,7 @@ function initializeMap(locations, container, mapDiv) {
 
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function () {
-      //debugger;
+      infoWindow.open(map, marker);
     });
 
     bounds.extend(new google.maps.LatLng(lat, lon));
