@@ -1,10 +1,7 @@
 var map;    // declares a global map variable
 
 function initializeMap(locations, container, mapDiv) {
-
-  google.maps.event.addListenerOnce(map, 'idle', function(){
-    $(container).append(mapDiv);
-  });
+  $(container).append(mapDiv);
 
   var mapOptions = {
     disableDefaultUI: true
