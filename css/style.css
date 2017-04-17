@@ -55,6 +55,11 @@
   width: 70px;
 }
 
+#hide-side-bar span {
+  display: none;
+  color: #fff;
+}
+
 #contacts i img{
   color: #e7e5ce;
   width: 30px;
@@ -202,6 +207,18 @@
   box-shadow: 0px 10px 25px 2px rgba(0, 0, 0, 0.51);
 }
 
+.places {
+  color: #ecf0f1;
+  font-size: 2em;
+  position: absolute;
+  z-index: 9;
+  text-align: center;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.51), rgba(0, 0, 0, 0.00) );
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+}
+
 .map-small {
   height: 100%;
   width: 100%;
@@ -244,13 +261,20 @@
 }
 
 #content-info .text h4 a:hover{
+  text-decoration: none;
   color: #4e2e69;
 }
 
 #content-info .text h5{
+  font-size: 1.2em;
   margin-bottom: 1em;
   margin-top: 0.71em;
   text-align: left;
+}
+
+#content-info .text h5{
+  font-size: 1em;
+  font-family: Georgia;
 }
 
 #content-info .multimedia {

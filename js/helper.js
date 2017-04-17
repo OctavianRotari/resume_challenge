@@ -51,4 +51,5 @@ const HTMLdivMultimedia = '<div class="multimedia"></div>';
 
 const HTMLdivAnimation = '<div class="animation"></div>';
 const googleMap = '<div id="map" class="map-big"></div>';
+const HTMLplaces = '<h2 class="places">Places I worked and lived in</h2>';
 const googleMapSmall = '<iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCEcdmaS5zsj8QJBFnvNTvjkbeDliYHXz4&q=place_id:%data%" allowfullscreen></iframe>';

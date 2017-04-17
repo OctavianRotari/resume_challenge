@@ -59,7 +59,6 @@
       "grade": null,
       "type": "In-class",
       "url": "bank",
-      "majors": null,
       "description": "Makers Academy is Europe's leading Web Developer bootcamp. With our help, you'll learn the principles of software craftsmanship and we'll also help you get your first job. We've graduated over 700 students into their dream jobs as junior developers."
     },
     {
@@ -70,7 +69,6 @@
       "degreeDates": "09/2012-05/2015",
       "grade": "98",
       "type": "In-class",
-      "url": "bank",
       "majors": "Accountant Diploma",
       "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
     },
@@ -82,7 +80,6 @@
       "degreeDates": "09/2008-05/2011",
       "grade": "70",
       "type": "In-class",
-      "url": "bank",
       "majors": "Industrial Mechanics Diploma",
       "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
     },
@@ -94,7 +91,6 @@
       "degreeDates": "08/2015-09/2015",
       "grade": "88",
       "type": "In-class",
-      "url": "bank",
       "majors": "European Bartender School",
       "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
     },
@@ -106,7 +102,6 @@
       "degreeDates": "02/2017-03/2017",
       "grade": null,
       "type": "On-line",
-      "url": "bank",
       "majors": null,
       "certificate": "img/certificates/seo_training_accademy.png",
       "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
@@ -119,7 +114,6 @@
       "degreeDates": "01/2017-(WIP)",
       "grade": null,
       "type": "On-line",
-      "url": "bank",
       "majors": null,
       "certificate": null,
       "description": "Master the skills required to become a Front-End Web Developer, and start building beautiful, responsive websites optimized for mobile and desktop performance. Learn the fundamentals of how the web works and gain a working knowledge of the three foundational languages that power each and every website: HTML, CSS and JavaScript."
@@ -132,7 +126,6 @@
       "degreeDates": "08/2016-12/2016",
       "grade": null,
       "type": "On-line",
-      "url": "bank",
       "majors": null,
       "certificate": "img/certificates/master_php.png",
       "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
@@ -145,7 +138,6 @@
       "degreeDates": "09/2016-11/2016",
       "grade": null,
       "type": "On-line",
-      "url": "bank",
       "majors": null,
       "certificate": "img/certificates/responsive_websites.png",
       "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
@@ -158,7 +150,6 @@
       "degreeDates": "09/2016-11/2016",
       "grade": null,
       "type": "On-line",
-      "url": "bank",
       "majors": null,
       "certificate": "img/certificates/advanced_javascript.png",
       "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
@@ -210,6 +201,7 @@
       "title": "Portfolio (WIP)",
       "github": "https://github.com/OctavianRotari/porfolio_udacity",
       "description": "This was the first project after the course on responsiveness. In this course I followed the best practices of using media queries to arrange the content of the page on different screens, I also used Gulp to automate tasks as the image resolutions, minify javascript, compile sass in Css and minify Css too and I also use semantic HTML tags and srcset to set the appropriate image for every screen size and resolution.",
+      "path": "portfolio",
       "language": "HTML-CSS",
       "frameworks": "Bootstrap",
       "image": "img/projects/portfolio.png"
@@ -219,8 +211,9 @@
       "title": "CMS PHP",
       "github": "https://github.com/OctavianRotari/cms_php",
       "description": "My final assessment in the php course was to build a fully functioning CMS (content management system). This project was constructed of two parts, a blog part which was accessible to all online users as a platform to access published blog posts and an admin part, whereby registered users could upload and modify blog posts with categories and contents.",
+      "path": "cms_php",
       "language": "PHP",
-      "frameworks": "Bootstrap, Bootstrap",
+      "frameworks": "Bootstrap",
       "image": "img/projects/php_cms.png"
     }
   ]

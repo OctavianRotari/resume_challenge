@@ -9,6 +9,7 @@ function initializeMap(locations, container, mapDiv) {
   };
 
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
+  $('#map').prepend(HTMLplaces);
 
   function createMapMarker(placeData) {
 
