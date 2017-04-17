@@ -57,10 +57,9 @@ function buildProject(dataValue) {
   var projects = myProjects.options.data;
   var project = projects.find(clicked, dataValue);
 
-  var title = HTMLprojectTitle.replace('%data%', project.title);
-  var date = HTMLprojectDate.replace('%data%', project.date);
+  var title = HTMLprojectTitle.replace('%path%', project.path).replace('%data%', project.title);
   var language = HTMLprojectLanguage.replace('%data%', project.language);
-  var frameworks = HTMLprojectFrameworks.replace('%data%', project.framewors);
+  var frameworks = HTMLprojectFrameworks.replace('%data%', project.frameworks);
   var description = HTMLprojectDescription.replace('%data%', project.description);
   var image = HTMLprojectImage.replace('%data%', project.image);
 
@@ -69,7 +68,7 @@ function buildProject(dataValue) {
   }
 
   main.contentInfo.append(HTMLdivText, HTMLdivMultimedia);
-  $('.text').append(title, date, language, frameworks, description);
+  $('.text').append(title, language, frameworks, description);
   $('.multimedia').append(image);
 }
 
@@ -140,7 +139,7 @@ function buildCourses(dataValue) {
   var image;
   var courses = myEducation.options.data;
   var course = courses.find(clicked, dataValue);
-  var name = HTMLeducationName.replace('%data%', course.name);
+  var name = HTMLeducationName.replace('%path%', course.path).replace('%data%', course.name);
   var date = HTMLeducationDate.replace('%data%', course.degreeDates);
   var description = HTMLeducationDescription.replace('%data%', course.description);
 

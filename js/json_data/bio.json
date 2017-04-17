@@ -53,6 +53,7 @@
     {
       "id": 0,
       "name": "Makers Academy",
+      "path": "http://www.makersacademy.com/",
       "location": "Makers Academy, Commercial Street, City of London, United Kingdom",
       "degreeDates": "09/2015-02/2016",
       "grade": null,
@@ -64,6 +65,7 @@
     {
       "id": 1,
       "name": "ITC G. Ginanni",
+      "path": "https://www.itcginanni.gov.it/",
       "location": "ITC G. Ginanni, Via Giosuè Carducci, 11, 48100 Ravenna RA, Italy",
       "degreeDates": "09/2012-05/2015",
       "grade": "98",
@@ -75,6 +77,7 @@
     {
       "id": 2,
       "name": "ITIS Mantova",
+      "path": "http://www.fermimn.gov.it/",
       "location": "ITIS, Strada Spolverina, 5, 46100 Mantova MN, Italy",
       "degreeDates": "09/2008-05/2011",
       "grade": "70",
@@ -86,6 +89,7 @@
     {
       "id": 3,
       "name": "EBS Bartender",
+      "path": "http://www.barschool.net/",
       "location": "EBS, Luntmakargatan 36, 111 37 Stockholm, Sweden",
       "degreeDates": "08/2015-09/2015",
       "grade": "88",
@@ -97,6 +101,7 @@
     {
       "id": 4,
       "name": "SEO Traning Accademy",
+      "path": "https://www.udemy.com/seo-training-academy-learn-search-engine-optimization/learn/v4/overview",
       "location": null,
       "degreeDates": "02/2017-03/2017",
       "grade": null,
@@ -108,7 +113,21 @@
     },
     {
       "id": 5,
+      "name": "Front-End Web Developer Nanodegree",
+      "path": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001",
+      "location": null,
+      "degreeDates": "01/2017-(WIP)",
+      "grade": null,
+      "type": "On-line",
+      "url": "bank",
+      "majors": null,
+      "certificate": null,
+      "description": "Master the skills required to become a Front-End Web Developer, and start building beautiful, responsive websites optimized for mobile and desktop performance. Learn the fundamentals of how the web works and gain a working knowledge of the three foundational languages that power each and every website: HTML, CSS and JavaScript."
+    },
+    {
+      "id": 6,
       "name": "Master PHP",
+      "path": "https://www.udemy.com/php-for-complete-beginners-includes-msql-object-oriented/learn/v4/",
       "location": null,
       "degreeDates": "08/2016-12/2016",
       "grade": null,
@@ -119,8 +138,9 @@
       "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
     },
     {
-      "id": 6,
+      "id": 7,
       "name": "Responsive Websites",
+      "path": "https://www.udemy.com/design-and-develop-a-killer-website-with-html5-and-css3/learn/v4/",
       "location": null,
       "degreeDates": "09/2016-11/2016",
       "grade": null,
@@ -131,8 +151,9 @@
       "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
     },
     {
-      "id": 7,
+      "id": 8,
       "name": "Advanced JavaScript",
+      "path": "https://www.udemy.com/top-javascript-interview-questions-and-answers/learn/v4/",
       "location": null,
       "degreeDates": "09/2016-11/2016",
       "grade": null,
@@ -146,39 +167,61 @@
   "projects": [
     {
       "id": 0,
-      "title": "Hello javascript",
-      "dates": "07/2012-10/2012",
+      "title": "YouTube Clone",
+      "github": "",
       "description": "Main barteder in one of the most famous restaurant in Maiorca",
-      "language": "javascript",
-      "frameworks": "jQuery",
-      "images": ""
+      "path": "youtube-clone",
+      "language": "JavaScript",
+      "frameworks": "Bootstrap, React",
+      "image": "img/projects/youtube_clone.png"
     },
     {
       "id": 1,
-      "title": "Hello ruby",
-      "dates": "07/2012-10/2012",
+      "title": "Weather Web-App",
+      "github": "",
+      "path": "weather-app",
       "description": "Main barteder in one of the most famous restaurant in Maiorca",
-      "language": "ruby",
-      "frameworks": "Ruby on Rails",
-      "images": ""
+      "language": "JavaScript",
+      "frameworks": "Bootstrap, React, Redux",
+      "image": "img/projects/weather_app.png"
     },
     {
       "id": 2,
-      "title": "Hello html-css",
-      "dates": "07/2012-10/2012",
+      "title": "Accounting",
+      "github": "",
+      "path": "https://quiet-sea-15101.herokuapp.com/",
       "description": "Main barteder in one of the most famous restaurant in Maiorca",
-      "language": "HTML-CSS",
-      "frameworks": "SASS",
-      "images": ""
+      "language": "Ruby",
+      "frameworks": "Ruby on Rails, JQuery",
+      "image": "img/projects/accounting.png"
     },
     {
       "id": 3,
-      "title": "Hello php",
-      "dates": "07/2012-10/2012",
+      "title": "Omnifood",
+      "github": "",
+      "path": "omnifood",
+      "description": "Main barteder in one of the most famous restaurant in Maiorca",
+      "language": "HTML-CSS",
+      "frameworks": "Bootstrap, JQuery",
+      "image": "img/projects/omnifood.png"
+    },
+    {
+      "id": 4,
+      "title": "Portfolio (WIP)",
+      "github": "",
+      "description": "Main barteder in one of the most famous restaurant in Maiorca",
+      "language": "HTML-CSS",
+      "frameworks": "Bootstrap",
+      "image": "img/projects/portfolio.png"
+    },
+    {
+      "id": 5,
+      "title": "CMS PHP",
+      "github": "",
       "description": "Main barteder in one of the most famous restaurant in Maiorca",
       "language": "PHP",
-      "frameworks": "Bootstrap",
-      "images": ""
+      "frameworks": "Bootstrap, Bootstrap",
+      "image": "img/projects/php_cms.png"
     }
   ]
 }

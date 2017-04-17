@@ -29,15 +29,14 @@ const HTMLdropdownLiMenu = '<li data-value="%data-value%" class="dropdown-li">%d
 
 // projects
 
-const HTMLprojectTitle = '<h4 id="project-title">%data%</h4>';
-const HTMLprojectDate = '<h5 id="project-dates">%data%</h5>';
+const HTMLprojectTitle = '<h4 id="project-title"><a target="_blank" href="%path%">%data%</a></h4>';
 const HTMLprojectLanguage = '<h5 id="project-language">%data%</h5>';
-const HTMLprojectFrameworks = '<p id="project-frameworks">%data%</p>';
+const HTMLprojectFrameworks = '<h5 id="project-frameworks">%data%</h5>';
 const HTMLprojectDescription = '<p id="project-description">%data%</p>';
-const HTMLprojectImage = '<img src="%data%" alt="">';
+const HTMLprojectImage = '<img src="%data%" alt="" class="project">';
 
 // education
-const HTMLeducationName = '<h4 id="education-name"><a href="blank">%data%</a></h4>';
+const HTMLeducationName = '<h4 id="education-name"><a target="_blank" href="%path%">%data%</a></h4>';
 const HTMLeducationLocation = '<h5 id="education-location">%data%</h5>';
 const HTMLeducationType = '<h5 id="education-type">%data%</h5>';
 const HTMLeducationDate = '<h5 id="education-dates">%data%</h5>';
