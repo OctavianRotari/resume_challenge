@@ -230,6 +230,13 @@
 #content-info .text h4{
   font-family: helvetica;
   font-size: 1.71em;
+  display: inline-block;
+}
+
+#content-info .text i{
+  display: inline-block;
+  width: 2em;
+  margin-right: 1em;
 }
 
 #content-info .text h4 a{
@@ -252,7 +259,7 @@
   display: none;
 }
 
-#content-info img {
+#content-info .multimedia img {
   position: absolute;
   max-width: 75%;
   transform: translate(-50%, -50%);

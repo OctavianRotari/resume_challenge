@@ -34,6 +34,7 @@ const HTMLprojectLanguage = '<h5 id="project-language">%data%</h5>';
 const HTMLprojectFrameworks = '<h5 id="project-frameworks">%data%</h5>';
 const HTMLprojectDescription = '<p id="project-description">%data%</p>';
 const HTMLprojectImage = '<img src="%data%" alt="" class="project">';
+const HTMLprojectGithub = '<i><a target="_blank" href="%github%"><img src="img/github.svg" alt=""></a></i>';
 
 // education
 const HTMLeducationName = '<h4 id="education-name"><a target="_blank" href="%path%">%data%</a></h4>';

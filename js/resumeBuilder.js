@@ -58,6 +58,7 @@ function buildProject(dataValue) {
   var project = projects.find(clicked, dataValue);
 
   var title = HTMLprojectTitle.replace('%path%', project.path).replace('%data%', project.title);
+  var icon = HTMLprojectGithub.replace('%github%', project.github);
   var language = HTMLprojectLanguage.replace('%data%', project.language);
   var frameworks = HTMLprojectFrameworks.replace('%data%', project.frameworks);
   var description = HTMLprojectDescription.replace('%data%', project.description);
@@ -68,7 +69,7 @@ function buildProject(dataValue) {
   }
 
   main.contentInfo.append(HTMLdivText, HTMLdivMultimedia);
-  $('.text').append(title, language, frameworks, description);
+  $('.text').append(icon, title, language, frameworks, description);
   $('.multimedia').append(image);
 }
 

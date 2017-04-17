@@ -168,7 +168,7 @@
     {
       "id": 0,
       "title": "YouTube Clone",
-      "github": "",
+      "github": "https://github.com/OctavianRotari/youtubeClone",
       "description": "Main barteder in one of the most famous restaurant in Maiorca",
       "path": "youtube-clone",
       "language": "JavaScript",
@@ -178,7 +178,7 @@
     {
       "id": 1,
       "title": "Weather Web-App",
-      "github": "",
+      "github": "https://github.com/OctavianRotari/wheather-app-redux",
       "path": "weather-app",
       "description": "Main barteder in one of the most famous restaurant in Maiorca",
       "language": "JavaScript",
@@ -188,9 +188,9 @@
     {
       "id": 2,
       "title": "Accounting",
-      "github": "",
+      "github": "https://github.com/OctavianRotari/contabilita_rails",
       "path": "https://quiet-sea-15101.herokuapp.com/",
-      "description": "Main barteder in one of the most famous restaurant in Maiorca",
+      "description": "This is a web-app developed with Rails. It’s purpose is to help small-scale transport companies with their accounting. All expenses are registered (invoices, tickets etc) as well as vehicles and categories, then accountability calculations are performed and the owners can see an overview of expenditures and profits.",
       "language": "Ruby",
       "frameworks": "Ruby on Rails, JQuery",
       "image": "img/projects/accounting.png"
@@ -198,9 +198,9 @@
     {
       "id": 3,
       "title": "Omnifood",
-      "github": "",
+      "github": "https://github.com/OctavianRotari/Omnifood",
       "path": "omnifood",
-      "description": "Main barteder in one of the most famous restaurant in Maiorca",
+      "description": "The emphasis of this project was to improve my web-designing skills, as my ultimate goal is to become a front-end developer. I undertook a course on web-design and as a final project in this course i had to create a website for superfulous client Omnifood. The focus of this web-site was to attract users to subscribe to a monthly food delivery contract.",
       "language": "HTML-CSS",
       "frameworks": "Bootstrap, JQuery",
       "image": "img/projects/omnifood.png"
@@ -208,8 +208,8 @@
     {
       "id": 4,
       "title": "Portfolio (WIP)",
-      "github": "",
-      "description": "Main barteder in one of the most famous restaurant in Maiorca",
+      "github": "https://github.com/OctavianRotari/porfolio_udacity",
+      "description": "This was the first project after the course on responsiveness. In this course I followed the best practices of using media queries to arrange the content of the page on different screens, I also used Gulp to automate tasks as the image resolutions, minify javascript, compile sass in Css and minify Css too and I also use semantic HTML tags and srcset to set the appropriate image for every screen size and resolution.",
       "language": "HTML-CSS",
       "frameworks": "Bootstrap",
       "image": "img/projects/portfolio.png"
@@ -217,8 +217,8 @@
     {
       "id": 5,
       "title": "CMS PHP",
-      "github": "",
-      "description": "Main barteder in one of the most famous restaurant in Maiorca",
+      "github": "https://github.com/OctavianRotari/cms_php",
+      "description": "My final assessment in the php course was to build a fully functioning CMS (content management system). This project was constructed of two parts, a blog part which was accessible to all online users as a platform to access published blog posts and an admin part, whereby registered users could upload and modify blog posts with categories and contents.",
       "language": "PHP",
       "frameworks": "Bootstrap, Bootstrap",
       "image": "img/projects/php_cms.png"
