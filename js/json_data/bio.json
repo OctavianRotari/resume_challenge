@@ -14,30 +14,37 @@
   "jobs": [
     {
       "id": 0,
-      "employer": "Camillo B.",
-      "title": "Bartender",
-      "location": "Roma",
-      "dates": "07/2016-12/2016",
+      "employer": "Rotari Aut.",
+      "title": "Web Developer",
+      "location": "Autotrasporti Rotari, Via dell'Abbondanza, 7, 48100 Ravenna RA, Italy",
+      "dates": "06/2016-(WIP)",
       "description": "Qualified bartender in a prestigious cocktail bar"
     },{
       "id": 1,
+      "employer": "Camillo B.",
+      "title": "Bartender",
+      "location": "Camillo B. Restaurant, Piazza Cavour, 21, 00193 Roma, Italy",
+      "dates": "07/2016-12/2016",
+      "description": "Qualified bartender in a prestigious cocktail bar"
+    },{
+      "id": 2,
       "employer": "Kalima B.",
       "title": "Bartender",
-      "location": "Maiorca",
+      "location": "Kalima Beach, C/Punta Ballena, 4, 07181 Magaluf, Balearic Islands, Spain",
       "dates": "05/2016-07/2016",
       "description": "Main barteder in one of the most famous restaurant in Maiorca"
     },{
-      "id": 2,
+      "id": 3,
       "employer": "Rotari Aut.",
       "title": "Mechanic",
-      "location": "Ravenna",
+      "location": "Autotrasporti Rotari, Via dell'Abbondanza, 7, 48100 Ravenna RA, Italy",
       "dates": "10/2012-05/2015",
       "description": "Worked as mechanic but also as a cosuntalt for the CEO"
     },{
-      "id": 3,
+      "id": 4,
       "employer": "Mattioli Car.",
       "title": "Mechanic",
-      "location": "Mantova",
+      "location": "Carrozzeria Mattioli, Via Lombardi Riccardo, 39, 46010 Curtatone MN, Italy",
       "dates": "07/2012-10/2012",
       "description": "Mechanic aphrendistat"
     }
@@ -52,7 +59,7 @@
       "type": "In-class",
       "url": "bank",
       "majors": null,
-      "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
+      "description": "Makers Academy is Europe's leading Web Developer bootcamp. With our help, you'll learn the principles of software craftsmanship and we'll also help you get your first job. We've graduated over 700 students into their dream jobs as junior developers."
     },
     {
       "id": 1,

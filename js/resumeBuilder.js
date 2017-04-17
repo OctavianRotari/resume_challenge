@@ -95,10 +95,10 @@ myJobs.display = function (data) {
 function buildJob(dataValue) {
   var jobs = myJobs.options.data;
   var job = jobs.find(clicked, dataValue);
+  var location;
 
   var employer = HTMLjobEmployer.replace('%data%', job.employer);
   var title = HTMLjobTitle.replace('%data%', job.title);
-  var location = HTMLjobLocation.replace('%data%', job.location);
   var dates = HTMLjobDate.replace('%data%', job.dates);
   var description = HTMLjobDescription.replace('%data%', job.description);
 
@@ -106,7 +106,12 @@ function buildJob(dataValue) {
     main.contentInfo.children().remove();
   }
 
-  main.contentInfo.append(HTMLdivText);
+  if ( job.location ) {
+    location = HTMLjobLocation.replace('%data%', job.location);
+    initSmallMap( [ job.location ] );
+  }
+
+  main.contentInfo.append(HTMLdivText, HTMLdivMultimedia);
   $('.text').append(employer, title, location, dates, description);
 }
 
