@@ -359,10 +359,8 @@ function buildDropDownMenu(options) {
 }
 
 function showContentInfo(callback) {
-  var jobNames = $('#dropdown li');
-  jobNames.each( function () {
-    var job = $(this);
-    job.click( function (evt) {
+  $('#dropdown li').each( function () {
+    $(this).click( function (evt) {
       evt.stopImmediatePropagation();
       var dataValue = $(this).data().value;
       if ($('#content-info').children().length !== 0) {
