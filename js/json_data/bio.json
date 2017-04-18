@@ -18,7 +18,7 @@
       "title": "Web Developer",
       "location": "Autotrasporti Rotari, Via dell'Abbondanza, 7, 48100 Ravenna RA, Italy",
       "dates": "06/2016-(WIP)",
-      "description": "Qualified bartender in a prestigious cocktail bar"
+      "description": "This app was developed to assist the accounting of Autotrasporti Rotari, taken away from the books into more efficient electronic based means. All expenses are registered (invoices, tickets etc) as well as vehicles and categories, then accountability calculations are performed and the accountant can see an overview of expenditures and profits per month and per year."
     },{
       "id": 1,
       "employer": "Camillo B.",
@@ -39,14 +39,14 @@
       "title": "Mechanic",
       "location": "Autotrasporti Rotari, Via dell'Abbondanza, 7, 48100 Ravenna RA, Italy",
       "dates": "10/2012-05/2015",
-      "description": "Worked as mechanic but also as a cosuntalt for the CEO"
+      "description": "Worked as a Mechanic and Consultant at a small start up in the transport sector. My responsibilities included supporting the CEO, organising the inventory and managing stakeholders."
     },{
       "id": 4,
       "employer": "Mattioli Car.",
       "title": "Mechanic",
       "location": "Carrozzeria Mattioli, Via Lombardi Riccardo, 39, 46010 Curtatone MN, Italy",
       "dates": "07/2012-10/2012",
-      "description": "Mechanic aphrendistat"
+      "description": "After completing school I worked at a mechanics shop in order to pursue my love of cars and automotive. Although I enjoyed the hands-on experience I wished to gain a higher level of theoretical learning and returned to my studies."
     }
   ],
   "courses": [
@@ -70,21 +70,10 @@
       "grade": "98",
       "type": "In-class",
       "majors": "Accountant Diploma",
-      "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
+      "description": "During my studies I gained an in-depth understanding of economics and the way they relate to entrepreneurship. I attended classes during the evenings so I could work full-time during the day."
     },
     {
       "id": 2,
-      "name": "ITIS Mantova",
-      "path": "http://www.fermimn.gov.it/",
-      "location": "ITIS, Strada Spolverina, 5, 46100 Mantova MN, Italy",
-      "degreeDates": "09/2008-05/2011",
-      "grade": "70",
-      "type": "In-class",
-      "majors": "Industrial Mechanics Diploma",
-      "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
-    },
-    {
-      "id": 3,
       "name": "EBS Bartender",
       "path": "http://www.barschool.net/",
       "location": "EBS, Luntmakargatan 36, 111 37 Stockholm, Sweden",
@@ -95,7 +84,7 @@
       "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
     },
     {
-      "id": 4,
+      "id": 3,
       "name": "SEO Traning Accademy",
       "path": "https://www.udemy.com/seo-training-academy-learn-search-engine-optimization/learn/v4/overview",
       "location": null,
@@ -104,10 +93,10 @@
       "type": "On-line",
       "majors": null,
       "certificate": "img/certificates/seo_training_accademy.png",
-      "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
+      "description": "With this course I laid the groundwork with the fundamental principles involved in SEO. I gained historical knowledge about what's changed in recent years along with the strategies and techniques to help you rank at the top of Google's searches."
     },
     {
-      "id": 5,
+      "id": 4,
       "name": "Front-End Web Developer Nanodegree",
       "path": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001",
       "location": null,
@@ -119,7 +108,7 @@
       "description": "Master the skills required to become a Front-End Web Developer, and start building beautiful, responsive websites optimized for mobile and desktop performance. Learn the fundamentals of how the web works and gain a working knowledge of the three foundational languages that power each and every website: HTML, CSS and JavaScript."
     },
     {
-      "id": 6,
+      "id": 5,
       "name": "Master PHP",
       "path": "https://www.udemy.com/php-for-complete-beginners-includes-msql-object-oriented/learn/v4/",
       "location": null,
@@ -128,10 +117,10 @@
       "type": "On-line",
       "majors": null,
       "certificate": "img/certificates/master_php.png",
-      "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
+      "description": "With this course I laid all the fundamentals of Procedural PHP, Object Oriented PHP, MYSQLi and by the end of the course I built a CMS system similar to WordPress."
     },
     {
-      "id": 7,
+      "id": 6,
       "name": "Responsive Websites",
       "path": "https://www.udemy.com/design-and-develop-a-killer-website-with-html5-and-css3/learn/v4/",
       "location": null,
@@ -140,10 +129,10 @@
       "type": "On-line",
       "majors": null,
       "certificate": "img/certificates/responsive_websites.png",
-      "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
+      "description": "With this course I learnt HTML5 and CSS3 features, from beginner to advanced. These are the latest web technologies, used by every website in the world. And I even added some jQuery to the mix. I also learnt the entire process of building and launching the final project. This includes designing, coding, planning, writing clean and organized code, website optimization and best practices."
     },
     {
-      "id": 8,
+      "id": 7,
       "name": "Advanced JavaScript",
       "path": "https://www.udemy.com/top-javascript-interview-questions-and-answers/learn/v4/",
       "location": null,
@@ -152,7 +141,7 @@
       "type": "On-line",
       "majors": null,
       "certificate": "img/certificates/advanced_javascript.png",
-      "description": "Donut cake danish jelly beans donut tart gingerbread. Cookie macaroon gingerbread lollipop sesame snaps sweet roll. Croissant cake sugar plum candy canes sesame snaps chocolate bar jelly beans cookie jujubes. Candy canes marzipan tootsie roll sugar plum macaroon halvah. Cake marshmallow topping caramels halvah sweet roll soufflé jujubes. Apple pie topping croissant toffee icing. Chocolate sesame snaps carrot cake tootsie roll wafermuffin ice cream tiramisu."
+      "description": "With this course I learnt the core principles of ES5 the last JavaScript version supported in all the browsers. This course went from a basic explanation of the easier concepts to more advanced ones as prototyping and CORS."
     }
   ],
   "projects": [
@@ -160,8 +149,8 @@
       "id": 0,
       "title": "YouTube Clone",
       "github": "https://github.com/OctavianRotari/youtubeClone",
-      "description": "Main barteder in one of the most famous restaurant in Maiorca",
-      "path": "youtube-clone",
+      "description": "This app was developed using React, to create a YouTube clone using the it's API.",
+      "path": "tenis_game",
       "language": "JavaScript",
       "frameworks": "Bootstrap, React",
       "image": "img/projects/youtube_clone.png"
@@ -170,8 +159,8 @@
       "id": 1,
       "title": "Weather Web-App",
       "github": "https://github.com/OctavianRotari/wheather-app-redux",
-      "path": "weather-app",
-      "description": "Main barteder in one of the most famous restaurant in Maiorca",
+      "path": "tenis_game",
+      "description": "This app was developed using React but also Redux to keep track of the application state. The app gets it's data from and external API and uses it to create it's components/container. It's purpose is to show to the user the weather from different locations.",
       "language": "JavaScript",
       "frameworks": "Bootstrap, React, Redux",
       "image": "img/projects/weather_app.png"
@@ -201,7 +190,7 @@
       "title": "Portfolio (WIP)",
       "github": "https://github.com/OctavianRotari/porfolio_udacity",
       "description": "This was the first project after the course on responsiveness. In this course I followed the best practices of using media queries to arrange the content of the page on different screens, I also used Gulp to automate tasks as the image resolutions, minify javascript, compile sass in Css and minify Css too and I also use semantic HTML tags and srcset to set the appropriate image for every screen size and resolution.",
-      "path": "portfolio",
+      "path": "tenis_game",
       "language": "HTML-CSS",
       "frameworks": "Bootstrap",
       "image": "img/projects/portfolio.png"
