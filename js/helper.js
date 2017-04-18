@@ -6,7 +6,7 @@ const HTMLrole = '<h2>%data%</h2>';
 const HTMLwelcomeMessage = '<p>%data%</p>';
 
 const HTMLcontact = '<div class="contact"></div>';
-const HTMLiconContacts = '<i><img src="%data%" alt=""></i>';
+const HTMLiconContacts = '<i><img src="img/%data%.svg" alt=""></i>';
 const HTMLcontactInfo = '<p id="%contactType%">%data%</p>';
 
 // main icons

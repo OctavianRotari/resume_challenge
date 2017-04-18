@@ -3,7 +3,7 @@ getBio = function () {
 };
 
 // sidebar
-const sideBar = {
+var sideBar = {
   divSidebar: $('#sidebar'),
   divHeader: $('#sidebar-header'),
   divContacts: $('#contacts'),
@@ -17,7 +17,7 @@ const sideBar = {
 };
 
 // main
-const main = {
+var main = {
   main: $('#main'),
   header: $('#header'),
   iconsResume: $('#icons-resume'),
@@ -30,7 +30,7 @@ const main = {
 };
 
 // projects
-const myProjects = {
+var myProjects = {
   open: false,
   options: {
     keyMenu: 'language',
@@ -75,7 +75,7 @@ function buildProject(dataValue) {
 
 // jobs
 
-const myJobs = {
+var myJobs = {
   open: false,
   options: {
     keyMenu: 'title',
@@ -117,7 +117,7 @@ function buildJob(dataValue) {
 
 // education
 
-const myEducation = {
+var myEducation = {
   open: false,
   options: {
     keyMenu: 'type',
@@ -193,7 +193,7 @@ function addContactsSidebar() {
   for ( var contact in contacts ) {
     var contactText = contacts[contact];
 
-    var icon = HTMLiconContacts.replace('%data%', `img/${contact}.svg`);
+    var icon = HTMLiconContacts.replace('%data%', contact);
     var text = HTMLcontactInfo.replace('%data%', contactText).replace('%contactType%', contact);
 
     sideBar.divContacts.append(HTMLcontact);
@@ -313,7 +313,7 @@ function buildHeader(options) {
       });
 
       $('#menu li').each( function () {
-        $(this).css('width', `${ 100 / uniqueValues.length }%`);
+        $(this).css('width', 100 / uniqueValues.length + '%');
       });
 
       buildDropDownMenu(options);
@@ -329,12 +329,12 @@ function animateMenu(icon) {
   var menuWidth = parseInt($('.main-content').css('width'));
 
   return animationDot.animate({
-    left: `${position.left += 35}px`,
-    top: `${position.top += 20}px`
+    left: position.left += 35 + 'px',
+    top: position.top += 20 + 'px'
   }).animate({
-    top: `${headerPosition.top}px`,
-    left: `${headerPosition.left}px`,
-    width: `${menuWidth}`
+    top: headerPosition.top + 'px',
+    left: headerPosition.left + 'px',
+    width: menuWidth
   }, 1000, 'easeOutQuart');
 }
 
